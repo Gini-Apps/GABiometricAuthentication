@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GABiometricAuthentication_Example' do
+  pod 'GABiometricAuthentication', :path => '../'
+
+  target 'GABiometricAuthentication_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

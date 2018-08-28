@@ -1,0 +1,25 @@
+{
+  "name": "GABiometricAuthentication",
+  "version": "0.1.0",
+  "summary": "A short description of GABiometricAuthentication.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/shay-somech/GABiometricAuthentication",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "idoMeirov": "idom@gini-apps.com"
+  },
+  "source": {
+    "git": "https://github.com/shay-somech/GABiometricAuthentication.git",
+    "tag": "0.1.0"
+  },
+  "swift_version": "4.1",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "frameworks": "UIKit",
+  "source_files": "GABiometricAuthentication/Classes/**/*",
+  "resources": "GABiometricAuthentication/Assets/PopUp/**/*"
+}

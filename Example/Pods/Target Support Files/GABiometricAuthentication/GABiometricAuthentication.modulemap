@@ -1,0 +1,6 @@
+framework module GABiometricAuthentication {
+  umbrella header "GABiometricAuthentication-umbrella.h"
+
+  export *
+  module * { export * }
+}
