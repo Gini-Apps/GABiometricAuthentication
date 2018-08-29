@@ -14,16 +14,15 @@ public enum GARegisterType
     case customUI(GACustomUIConfiguration)
 }
 
-public struct GACustomUIConfiguration
-{
-    let localizedReason: String
-}
-
 public class GABiometricAuthentication
 {
     public static func openRegisterForBiometricAuthentication(usingRegisterType type: GARegisterType, inViewController viewController: UIViewController)
     {
-        //guard GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication() else { return }
+        guard !GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication() else
+        {
+            print("user pass the permission with result: \(GABiometricAuthenticationService.getUserRevokeBiometricAuthentication())")
+            return
+        }
         
         switch type
         {

@@ -17,7 +17,7 @@ public struct GAFullScreenConfiguration
     {
         self.localizedReason    = localizedReason
         self.resultBlock        = resultBlock
-        self.uiConfiguration    = GAFullScreenUIConfiguration()
+        self.uiConfiguration    = uiConfiguration
     }
 }
 

@@ -23,7 +23,9 @@ class ViewController: UIViewController {
 
     @IBAction func registerDidPrass(_ sender: Any)
     {
-        let configuration = GAFullScreenConfiguration(uiConfiguration: GAFullScreenUIConfiguration(), localizedReason: "enter for password") { (result) in
+        let uiconfiguration = GAFullScreenUIConfiguration(titleText: NSAttributedString(string: "title"), descriptionText: NSAttributedString(string: "description"), backgroundColor: .white, centerImage: UIImage(named: "touch-id"), allowButtonConfiguration: GAFullScreenButtonConfiguration(backgroundColor: .black, textColor: .white, text: "Allow"), dontAllowButtonConfiguration: GAFullScreenButtonConfiguration(backgroundColor: .black, textColor: .white, text: "Do not Allow"))
+        
+        let configuration = GAFullScreenConfiguration(uiConfiguration: uiconfiguration, localizedReason: "enter for password") { (result) in
             
             
         }
