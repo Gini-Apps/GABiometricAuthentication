@@ -1,6 +1,6 @@
 //
 //  GABiometricAuthenticationService.swift
-//  GACustomPopup_Example
+//  GABiometricAuthentication
 //
 //  Created by ido meirov on 28/08/2018.
 //  Copyright © 2018 CocoaPods. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import LocalAuthentication
 
-enum BiometricAuthenticationResult
+public enum BiometricAuthenticationResult
 {
     case notRegister
     case success
@@ -23,7 +23,8 @@ enum BiometricAuthenticationResult
     case userRevoke
 }
 
-typealias BiometricAuthenticationResultBlock = (BiometricAuthenticationResult) -> Void
+public typealias BiometricAuthenticationResultBlock = (BiometricAuthenticationResult) -> Void
+public typealias BiometricAuthenticationRegistrationResultBlock = (_ success: Bool) -> Void
 
 class GABiometricAuthenticationService
 {
@@ -36,11 +37,11 @@ class GABiometricAuthenticationService
         return userDefaults.bool(forKey: BIOMETRIC_REGISTER_KEY)
     }
     
-    class func register(forBiometricLocalAuthenticationResult resultBlock: ((_ success: Bool) -> Void)? = nil)
+    class func register(forBiometricLocalAuthenticationWithLocalizedReason localizedReason: String, authenticationForTouchID: Bool = true, result resultBlock: @escaping BiometricAuthenticationRegistrationResultBlock)
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication()
         {
-            resultBlock?(false)
+            resultBlock(false)
             return
         }
         
@@ -48,7 +49,7 @@ class GABiometricAuthenticationService
         var authError: NSError? = nil
         if !context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError)
         {
-            resultBlock?(false)
+            resultBlock(false)
             if let aDescription = authError?.description
             {
                 print("Register for biometric authentication did failed with error: \(aDescription)")
@@ -58,42 +59,52 @@ class GABiometricAuthenticationService
         
         if GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication()
         {
-            resultBlock?(true)
+            resultBlock(true)
             return
         }
         
         GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
         
         // ask for user permission not needed for TouchID
-        if #available(iOS 11.0, *)
+        if !authenticationForTouchID
         {
-            switch context.biometryType
+            if #available(iOS 11.0, *)
             {
-            case .touchID:
-                resultBlock?(true)
+                switch context.biometryType
+                {
+                case .touchID:
+                    resultBlock(true)
+                    return
+                    
+                default:
+                    break
+                }
+            }
+            else
+            {
+                resultBlock(true)
                 return
-                
-            default:
-                break
             }
         }
-        else
-        {
-            resultBlock?(true)
-            return
-        }
+
         
-        GABiometricAuthenticationService.evaluateBiometricLocalAuthentication(withResult: { result in
+        GABiometricAuthenticationService.evaluateBiometricLocalAuthentication(localizedReason: localizedReason, withResult: { result in
             
             switch result
             {
-            case .success: resultBlock?(true)
-            default         : resultBlock?(false)
+            case .success   : resultBlock(true)
+            default         : resultBlock(false)
             }
         })
     }
     
-    class func evaluateBiometricLocalAuthentication(withResult result: @escaping BiometricAuthenticationResultBlock)
+    class func register(forFaceIDWithLocalizedReason localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationResultBlock)
+    {
+        GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: localizedReason, authenticationForTouchID: false, result: resultBlock)
+    }
+
+    
+    class func evaluateBiometricLocalAuthentication(localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication() == true
         {
@@ -111,7 +122,7 @@ class GABiometricAuthenticationService
         var authError: NSError? = nil
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError)
         {
-            GABiometricAuthenticationService.evaluatePolicy(using: context, withResult: result)
+            GABiometricAuthenticationService.evaluatePolicy(using: context, withLocalizedReason: localizedReason,  withResult: result)
         }
         else
         {
@@ -170,10 +181,9 @@ class GABiometricAuthenticationService
         userDefaults.synchronize()
     }
     
-    class func evaluatePolicy(using context: LAContext?, withResult result: @escaping BiometricAuthenticationResultBlock)
+    class func evaluatePolicy(using context: LAContext?, withLocalizedReason localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
     {
-        let myLocalizedReasonString = "Authenticate and log into your account."
-        context?.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString, reply: { success, error in
+        context?.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: { success, error in
             
             if success
             {
@@ -212,11 +222,11 @@ class GABiometricAuthenticationService
         {
             switch (error as NSError).code
             {
-            case LAError.Code.userFallback.rawValue            : result = .userFallback
-            case LAError.Code.userCancel.rawValue            : result = .userCancel
-            case LAError.Code.systemCancel.rawValue            : result = .systemCancel
-            case LAError.Code.biometryLockout.rawValue        : result = .lockout
-            case LAError.Code.authenticationFailed.rawValue    : result = .failed
+            case LAError.Code.userFallback.rawValue         : result = .userFallback
+            case LAError.Code.userCancel.rawValue           : result = .userCancel
+            case LAError.Code.systemCancel.rawValue         : result = .systemCancel
+            case LAError.Code.biometryLockout.rawValue      : result = .lockout
+            case LAError.Code.authenticationFailed.rawValue : result = .failed
             default: result = .unknowError
             }
         }
@@ -224,9 +234,9 @@ class GABiometricAuthenticationService
         {
             switch (error as NSError).code
             {
-            case LAError.Code.userFallback.rawValue            : result = .userFallback
-            case LAError.Code.userCancel.rawValue            : result = .userCancel
-            case LAError.Code.systemCancel.rawValue            : result = .systemCancel
+            case LAError.Code.userFallback.rawValue         : result = .userFallback
+            case LAError.Code.userCancel.rawValue           : result = .userCancel
+            case LAError.Code.systemCancel.rawValue         : result = .systemCancel
             case LAError.Code.authenticationFailed.rawValue : result = .failed
             default: result = .unknowError
             }

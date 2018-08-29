@@ -1,6 +1,6 @@
 //
 //  GABiometricAuthenticationPermissionPopup.swift
-//  Evrit-ios
+//  GABiometricAuthentication
 //
 //  Created by ido meirov on 24/04/2018.
 //  Copyright © 2018 Gini-Apps. All rights reserved.
@@ -10,14 +10,31 @@ import UIKit
 
 public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewController
 {
+    // MARK: - IBOutlet
     @IBOutlet weak var baseView: UIView!
- 
     @IBOutlet weak var messageBodyLabel: UILabel!
-    public var confirmDidPress: MethodPointer?
     
+    // MARK: - Properties
+    private var businessLogic: GABiometricAuthenticationPermissionBusinessLogicProtocol?
+    
+    // MARK: - Method
+    func configurationUI(byConfiguration configuration: GADefaultUIConfiguration)
+    {
+        businessLogic = GABiometricAuthenticationPermissionBusinessLogic(localizedReason: configuration.localizedReason, resultBlock: configuration.resultBlock)
+        businessLogic?.delegate = self
+    }
+    
+    // MARK: - IBAction
     @IBAction func doneButtonDidTap()
     {
-        confirmDidPress?()
+        dismiss(animated: true)
+    }
+}
+
+extension GABiometricAuthenticationPermissionPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
+{
+    func finish()
+    {
         dismiss(animated: true)
     }
 }
@@ -27,4 +44,4 @@ extension GABiometricAuthenticationPermissionPopup: PopoverTransitionAnimationPr
     public var viewForTransitionAnimation: UIView { return baseView }
 }
 
-extension GABiometricAuthenticationPermissionPopup: CellInfoable {}
+extension GABiometricAuthenticationPermissionPopup: ClassInfoable {}

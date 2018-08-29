@@ -1,5 +1,5 @@
 //
-//  PopoverAlertTransition.swift
+//  GAPopoverAlertTransition.swift
 //  Evrit-ios
 //
 //  Created by Menahem Barouk on 21/02/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopoverAlertTransition: NSObject
+public class GAPopoverAlertTransition: NSObject
 {
     // MARK: - Public Properties
     var animationDuration = TimeInterval(0.5)
@@ -17,31 +17,32 @@ class PopoverAlertTransition: NSObject
     fileprivate var isPresenting = true
     fileprivate var dimmedBackground: UIView?
     fileprivate weak var toViewController: UIViewController?
+    public var dismissOnBackgroundViewDidPrass = true
 }
 
-extension PopoverAlertTransition: UIViewControllerTransitioningDelegate
+extension GAPopoverAlertTransition: UIViewControllerTransitioningDelegate
 {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         isPresenting = true
         return self
     }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
         isPresenting = false
         return self
     }
 }
 
-extension PopoverAlertTransition: UIViewControllerAnimatedTransitioning
+extension GAPopoverAlertTransition: UIViewControllerAnimatedTransitioning
 {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
     {
         return animationDuration
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
     {
         switch isPresenting
         {
@@ -52,7 +53,7 @@ extension PopoverAlertTransition: UIViewControllerAnimatedTransitioning
 }
 
 // MARK: - Private methods
-fileprivate extension PopoverAlertTransition
+fileprivate extension GAPopoverAlertTransition
 {
     func animateTransitionForPresentation(_ transitionContext: UIViewControllerContextTransitioning)
     {
@@ -123,7 +124,7 @@ fileprivate extension PopoverAlertTransition
             transitionContext.completeTransition(transitionContext.transitionWasCancelled)
             return
         }
-
+        
         /// Animate the transition
         UIView.animate(withDuration: animationDuration,
                        delay: 0.0,
@@ -177,11 +178,16 @@ extension UIView
 }
 
 //MARK: - UIGestureRecognizerDelegate
-extension  PopoverAlertTransition: UIGestureRecognizerDelegate
+extension  GAPopoverAlertTransition: UIGestureRecognizerDelegate
 {
-    @objc func tapGestureDidTap() { toViewController?.dismiss(animated: true) }
+    @objc func tapGestureDidTap()
+    {
+        guard dismissOnBackgroundViewDidPrass else { return }
+        toViewController?.dismiss(animated: true)
+        
+    }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
     {
         return gestureRecognizer is UITapGestureRecognizer && touch.view == dimmedBackground
     }

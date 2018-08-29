@@ -1,6 +1,6 @@
 //
 //  PopAlertConfirmMethods.swift
-//  Evrit-ios
+//  GABiometricAuthentication
 //
 //  Created by Alex Pinhasov on 23/04/2018.
 //  Copyright © 2018 Gini-Apps. All rights reserved.

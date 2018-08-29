@@ -1,6 +1,6 @@
 //
 //  CellInfoable.swift
-//  Evrit-ios
+//  GABiometricAuthentication
 //
 //  Created by ido meirov on 03/07/2017.
 //  Copyright © 2017 Gini-Apps. All rights reserved.
@@ -8,23 +8,22 @@
 
 import UIKit
 
-public typealias ClassInfoable = CellInfoable
 
-public protocol CellInfoable : NSObjectProtocol
+public protocol ClassInfoable : NSObjectProtocol
 {
-    static var cellID  : String { get }
-    static var cellNib : UINib  { get }
+    static var classID  : String { get }
+    static var classNib : UINib  { get }
 }
 
-extension CellInfoable
+extension ClassInfoable
 {
-    public static var cellID  : String
+    public static var classID  : String
     {
         return String(describing: Self.self)
     }
     
-    public static var cellNib : UINib
+    public static var classNib : UINib
     {
-        return UINib(nibName: cellID, bundle: nil)
+        return UINib(nibName: classID, bundle: nil)
     }
 }
