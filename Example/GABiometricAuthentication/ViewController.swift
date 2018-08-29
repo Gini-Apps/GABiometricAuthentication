@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GABiometricAuthentication
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func registerDidPrass(_ sender: Any)
+    {
+        let configuration = GAFullScreenConfiguration(localizedReason: "test") { (result) in
+            
+            
+        }
+        GABiometricAuthentication.registerForBiometricAuthentication(usingRegisterType: .fullScrrenUI(configuration), inViewController: self)
+    }
 }
 

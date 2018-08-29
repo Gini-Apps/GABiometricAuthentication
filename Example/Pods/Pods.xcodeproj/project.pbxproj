@@ -11,6 +11,7 @@
 		1BD912F6F876287B6B10C588C902D7D2 /* PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9404CA16F446DAF87EA56774D5F0D0CB /* PresentationStyle.swift */; };
 		23FB706F43AB967663CC46DC6AB9F576 /* GABasePopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72395C969043FCBAC9535DCCA7CC3A81 /* GABasePopAlertViewController.swift */; };
 		272B700A21366A810010AE00 /* GABiometricAuthenticationPermissionBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B700921366A810010AE00 /* GABiometricAuthenticationPermissionBusinessLogic.swift */; };
+		272B700D2136887D0010AE00 /* GAFullScreenConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B700C2136887D0010AE00 /* GAFullScreenConfigurations.swift */; };
 		2BB3F0614B364145DF31F2C81E1C4E15 /* GABiometricAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22650152AAF547804834ABEE67C9219 /* GABiometricAuthenticationService.swift */; };
 		40CDC88180D9C6D3A88AF43B054F6612 /* GABiometricAuthentication-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DDB3C92797A59E3EEE6C972CB25CCB /* GABiometricAuthentication-dummy.m */; };
 		4769C34FA8D74E4AA9200752715E0E16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
@@ -50,6 +51,7 @@
 		243B35D2F727DBBC8C25DE6B926A501C /* Pods-GABiometricAuthentication_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GABiometricAuthentication_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		25B72B6C5962197C3DE4E9304D197B26 /* GABiometricAuthenticationPermissionPopup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionPopup.swift; sourceTree = "<group>"; };
 		272B700921366A810010AE00 /* GABiometricAuthenticationPermissionBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionBusinessLogic.swift; sourceTree = "<group>"; };
+		272B700C2136887D0010AE00 /* GAFullScreenConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFullScreenConfigurations.swift; sourceTree = "<group>"; };
 		273F21883E4107D1AEA3C08D4CED76BB /* Pods-GABiometricAuthentication_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GABiometricAuthentication_Example-resources.sh"; sourceTree = "<group>"; };
 		28AD07740EF93752E17FEF6DA3D3DC40 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		340EE9A9C862D7B1A930352CF793682F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		0CF772BA7DA833DA803DCC516EF226C8 /* GABiometricAuthentication */ = {
 			isa = PBXGroup;
 			children = (
+				272B700B213688580010AE00 /* Configuration */,
 				BB6275FEA3348E177B6E0F9D3E6F7BD9 /* Base View Controller */,
 				BBF343A0A0E5D0DD388530FCD976C472 /* BiometricAuthenticationPermissionPopup */,
 				BF419FDA29EC2E8F5E96273AA99F7F8C /* BiometricAuthenticationService */,
@@ -159,6 +162,15 @@
 				6FFDCC2D77E76967570791A10483774D /* Pods_GABiometricAuthentication_Tests.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		272B700B213688580010AE00 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				272B700C2136887D0010AE00 /* GAFullScreenConfigurations.swift */,
+			);
+			name = Configuration;
+			path = GABiometricAuthentication/Classes/Configuration;
 			sourceTree = "<group>";
 		};
 		3BDCB4EE9C204A94A68D44D8687CF99E /* Pods-GABiometricAuthentication_Tests */ = {
@@ -455,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7A690EF3FDCD664DF8168811C961A9 /* CellInfoable.swift in Sources */,
+				272B700D2136887D0010AE00 /* GAFullScreenConfigurations.swift in Sources */,
 				23FB706F43AB967663CC46DC6AB9F576 /* GABasePopAlertViewController.swift in Sources */,
 				40CDC88180D9C6D3A88AF43B054F6612 /* GABiometricAuthentication-dummy.m in Sources */,
 				7E55FB301913106B6C6643405CDBE18F /* GABiometricAuthentication.swift in Sources */,

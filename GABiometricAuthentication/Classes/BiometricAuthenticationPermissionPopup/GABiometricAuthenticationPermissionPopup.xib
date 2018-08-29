@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,10 +15,11 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GABiometricAuthenticationPermissionPopup" customModule="GACustomPopup_Example" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GABiometricAuthenticationPermissionPopup" customModule="GABiometricAuthentication" customModuleProvider="target">
             <connections>
                 <outlet property="baseView" destination="KFG-Vi-RP0" id="kX0-07-ebf"/>
                 <outlet property="messageBodyLabel" destination="LA8-y8-7HN" id="RpO-VQ-3WZ"/>
+                <outlet property="titleLabel" destination="LA8-y8-7HN" id="XzN-IY-o5x"/>
                 <outlet property="view" destination="OFX-Xf-ulg" id="uNJ-xs-iZ9"/>
             </connections>
         </placeholder>
@@ -24,65 +29,65 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFG-Vi-RP0">
-                    <rect key="frame" x="43.5" y="266.5" width="288" height="134.5"/>
+                    <rect key="frame" x="0.5" y="0.5" width="375" height="667"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA8-y8-7HN">
-                            <rect key="frame" x="16" y="32" width="256" height="21.5"/>
-                            <attributedString key="attributedText">
-                                <fragment content="זאת דוגמא לפופאפ">
-                                    <attributes>
-                                        <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" metaFont="system" size="18"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA8-y8-7HN">
+                            <rect key="frame" x="16" y="32" width="343" height="21.5"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                            <color key="textColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0IZ-DV-kX5">
-                            <rect key="frame" x="16" y="85.5" width="256" height="33"/>
+                            <rect key="frame" x="16" y="607" width="343" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrD-1w-VbJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="113" height="33"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="156.5" height="44"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Spoiler-Regular" family="Spoiler" pointSize="18"/>
-                                    <state key="normal" title="ביטול"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="15"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
+                                    <state key="normal" title="Do Not Allow"/>
                                     <connections>
                                         <action selector="cancelButtonDidPress:" destination="-1" eventType="touchUpInside" id="Ffr-7J-I8i"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88V-Rh-vth">
-                                    <rect key="frame" x="143" y="0.0" width="113" height="33"/>
+                                    <rect key="frame" x="186.5" y="0.0" width="156.5" height="44"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Spoiler-Regular" family="Spoiler" pointSize="18"/>
-                                    <state key="normal" title="בסדר"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="15"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
+                                    <state key="normal" title="Allow"/>
                                     <connections>
                                         <action selector="doneButtonDidTap" destination="-1" eventType="touchUpInside" id="mIb-Ok-Elh"/>
                                     </connections>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="97F-6m-5w7"/>
+                            </constraints>
                         </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7q-eZ-wJK">
+                            <rect key="frame" x="16" y="73.5" width="343" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bH0-gA-Rhk">
+                            <rect key="frame" x="0.0" y="102" width="375" height="491"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="288" id="2ki-bV-dv3"/>
+                        <constraint firstAttribute="trailing" secondItem="LA8-y8-7HN" secondAttribute="trailing" constant="16" id="7nM-nP-cqv"/>
+                        <constraint firstItem="O7q-eZ-wJK" firstAttribute="top" secondItem="LA8-y8-7HN" secondAttribute="bottom" constant="20" id="9Vl-ku-s61"/>
                         <constraint firstAttribute="bottom" secondItem="0IZ-DV-kX5" secondAttribute="bottom" constant="16" id="AeY-q3-09i"/>
+                        <constraint firstItem="0IZ-DV-kX5" firstAttribute="top" secondItem="bH0-gA-Rhk" secondAttribute="bottom" constant="14" id="Bcf-L4-Ik7"/>
+                        <constraint firstItem="bH0-gA-Rhk" firstAttribute="top" secondItem="O7q-eZ-wJK" secondAttribute="bottom" constant="8" id="Drd-AR-VRV"/>
+                        <constraint firstAttribute="trailing" secondItem="O7q-eZ-wJK" secondAttribute="trailing" constant="16" id="FkJ-Zi-JRv"/>
                         <constraint firstItem="0IZ-DV-kX5" firstAttribute="leading" secondItem="KFG-Vi-RP0" secondAttribute="leading" constant="16" id="GYq-Jr-fjg"/>
-                        <constraint firstItem="LA8-y8-7HN" firstAttribute="top" secondItem="KFG-Vi-RP0" secondAttribute="top" constant="32" id="Msm-7P-I0G"/>
-                        <constraint firstAttribute="trailing" secondItem="LA8-y8-7HN" secondAttribute="trailing" constant="16" id="ORm-kL-TD4"/>
+                        <constraint firstItem="LA8-y8-7HN" firstAttribute="top" secondItem="KFG-Vi-RP0" secondAttribute="top" constant="32" id="KSr-sj-U4v"/>
                         <constraint firstAttribute="trailing" secondItem="0IZ-DV-kX5" secondAttribute="trailing" constant="16" id="Rdt-JD-GmD"/>
-                        <constraint firstItem="0IZ-DV-kX5" firstAttribute="top" secondItem="LA8-y8-7HN" secondAttribute="bottom" constant="32" id="Rvv-jd-IYs"/>
-                        <constraint firstItem="LA8-y8-7HN" firstAttribute="leading" secondItem="KFG-Vi-RP0" secondAttribute="leading" constant="16" id="o8r-g4-lW6"/>
+                        <constraint firstAttribute="trailing" secondItem="bH0-gA-Rhk" secondAttribute="trailing" id="XEq-hf-dzb"/>
+                        <constraint firstItem="LA8-y8-7HN" firstAttribute="leading" secondItem="KFG-Vi-RP0" secondAttribute="leading" constant="16" id="kIm-Sg-Urj"/>
+                        <constraint firstItem="bH0-gA-Rhk" firstAttribute="leading" secondItem="KFG-Vi-RP0" secondAttribute="leading" id="qgi-1g-oXQ"/>
+                        <constraint firstItem="O7q-eZ-wJK" firstAttribute="leading" secondItem="KFG-Vi-RP0" secondAttribute="leading" constant="16" id="zSR-qF-K9t"/>
                     </constraints>
                 </view>
             </subviews>
@@ -90,8 +95,11 @@
             <constraints>
                 <constraint firstItem="KFG-Vi-RP0" firstAttribute="centerX" secondItem="OFX-Xf-ulg" secondAttribute="centerX" id="AYU-1j-P64"/>
                 <constraint firstItem="KFG-Vi-RP0" firstAttribute="centerY" secondItem="OFX-Xf-ulg" secondAttribute="centerY" id="HMk-wi-jBb"/>
+                <constraint firstItem="KFG-Vi-RP0" firstAttribute="width" secondItem="OFX-Xf-ulg" secondAttribute="width" id="LJC-cK-oe3"/>
+                <constraint firstItem="KFG-Vi-RP0" firstAttribute="height" secondItem="OFX-Xf-ulg" secondAttribute="height" id="pje-oe-uKu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="oYW-gn-Ulo"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
 </document>

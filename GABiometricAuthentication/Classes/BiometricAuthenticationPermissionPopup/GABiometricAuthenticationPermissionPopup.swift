@@ -13,28 +13,48 @@ public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewControl
     // MARK: - IBOutlet
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var messageBodyLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - Properties
     private var businessLogic: GABiometricAuthenticationPermissionBusinessLogicProtocol?
     
-    // MARK: - Method
-    func configurationUI(byConfiguration configuration: GADefaultUIConfiguration)
+    // MARK: - View life cycle
+    public override func viewDidLoad()
     {
-        businessLogic = GABiometricAuthenticationPermissionBusinessLogic(localizedReason: configuration.localizedReason, resultBlock: configuration.resultBlock)
+        super.viewDidLoad()
+        businessLogic?.handleViewDidLoad()
+    }
+    
+    // MARK: - Method
+    func configurationUI(byConfiguration configuration: GAFullScreenConfiguration)
+    {
+        businessLogic = GABiometricAuthenticationPermissionBusinessLogic(configuration: configuration)
         businessLogic?.delegate = self
     }
     
     // MARK: - IBAction
     @IBAction func doneButtonDidTap()
     {
-        dismiss(animated: true)
+        guard let businessLogic = businessLogic else
+        {
+            dismiss(animated: true)
+            return
+        }
+        
+        businessLogic.handleAllowAction()
     }
 }
 
 extension GABiometricAuthenticationPermissionPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
 {
+    func updateUI(byConfiguration uiConfiguration: GAFullScreenUIConfiguration)
+    {
+        titleLabel.attributedText = uiConfiguration.titleText
+    }
+    
     func finish()
     {
+        businessLogic?.handleDismiss()
         dismiss(animated: true)
     }
 }
