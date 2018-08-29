@@ -28,7 +28,7 @@ class GABiometricAuthenticationPermissionBusinessLogic: GABiometricAuthenticatio
     // MARK: - Properties
     private var didUpdateShowPermission : Bool
     private let configuration           : GAFullScreenConfiguration
-    
+    private var onAllowAction           : Bool
     weak var delegate: GABiometricAuthenticationPermissionBusinessLogicDelegate?
     
     // MARK: - Object life cycle
@@ -36,20 +36,27 @@ class GABiometricAuthenticationPermissionBusinessLogic: GABiometricAuthenticatio
     {
         self.configuration              = configuration
         self.didUpdateShowPermission    = false
+        self.onAllowAction              = false
     }
     
     // MARK: - GABiometricAuthenticationPermissionBusinessLogicProtocol
     func handleAllowAction()
     {
+        guard !onAllowAction else { return }
+        onAllowAction = true
         didUpdateShowPermission = true
-        GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: configuration.localizedReason) { (success) in
+        GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: configuration.localizedReason) { (result) in
             
             DispatchQueue.main.async { [weak self] in
                 
                 guard let strongSelf = self else { return }
-                
-                strongSelf.configuration.resultBlock(success)
-                strongSelf.delegate?.finish()
+                strongSelf.onAllowAction = false
+                switch result
+                {
+                case .allow         : strongSelf.configuration.resultBlock(true); strongSelf.delegate?.finish()
+                case .doNotAllow    : strongSelf.configuration.resultBlock(false); strongSelf.delegate?.finish()
+                case .cancel        : break
+                }
             }
         }
     }
@@ -57,6 +64,7 @@ class GABiometricAuthenticationPermissionBusinessLogic: GABiometricAuthenticatio
     func handleDoNotAllowAction()
     {
         GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
+        GABiometricAuthenticationService.setUserRevokeBiometricAuthentication(true)
         didUpdateShowPermission = true
         configuration.resultBlock(false)
         delegate?.finish()

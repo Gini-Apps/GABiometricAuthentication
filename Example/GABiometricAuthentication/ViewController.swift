@@ -23,11 +23,12 @@ class ViewController: UIViewController {
 
     @IBAction func registerDidPrass(_ sender: Any)
     {
-        let configuration = GAFullScreenConfiguration(localizedReason: "test") { (result) in
+        let configuration = GAFullScreenConfiguration(uiConfiguration: GAFullScreenUIConfiguration(), localizedReason: "enter for password") { (result) in
             
             
         }
-        GABiometricAuthentication.registerForBiometricAuthentication(usingRegisterType: .fullScrrenUI(configuration), inViewController: self)
+        
+        GABiometricAuthentication.openRegisterForBiometricAuthentication(usingRegisterType: .fullScrrenUI(configuration), inViewController: self)
     }
 }
 

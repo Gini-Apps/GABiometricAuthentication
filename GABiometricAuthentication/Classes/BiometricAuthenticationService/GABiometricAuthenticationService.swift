@@ -23,8 +23,16 @@ public enum BiometricAuthenticationResult
     case userRevoke
 }
 
+enum RegistrationResult
+{
+    case cancel
+    case allow
+    case doNotAllow
+}
+
 public typealias BiometricAuthenticationResultBlock = (BiometricAuthenticationResult) -> Void
-public typealias BiometricAuthenticationRegistrationResultBlock = (_ success: Bool) -> Void
+public typealias BiometricAuthenticationRegistrationSuccessBlock = (_ success: Bool) -> Void
+typealias BiometricAuthenticationRegistrationResultBlock = (RegistrationResult) -> Void
 
 class GABiometricAuthenticationService
 {
@@ -41,7 +49,7 @@ class GABiometricAuthenticationService
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication()
         {
-            resultBlock(false)
+            resultBlock(.doNotAllow)
             return
         }
         
@@ -49,7 +57,7 @@ class GABiometricAuthenticationService
         var authError: NSError? = nil
         if !context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError)
         {
-            resultBlock(false)
+            resultBlock(.doNotAllow)
             if let aDescription = authError?.description
             {
                 print("Register for biometric authentication did failed with error: \(aDescription)")
@@ -59,11 +67,9 @@ class GABiometricAuthenticationService
         
         if GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication()
         {
-            resultBlock(true)
+            resultBlock(.allow)
             return
         }
-        
-        GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
         
         // ask for user permission not needed for TouchID
         if !authenticationForTouchID
@@ -73,7 +79,7 @@ class GABiometricAuthenticationService
                 switch context.biometryType
                 {
                 case .touchID:
-                    resultBlock(true)
+                    resultBlock(.allow)
                     return
                     
                 default:
@@ -82,27 +88,55 @@ class GABiometricAuthenticationService
             }
             else
             {
-                resultBlock(true)
+                resultBlock(.allow)
                 return
             }
         }
-
         
-        GABiometricAuthenticationService.evaluateBiometricLocalAuthentication(localizedReason: localizedReason, withResult: { result in
+        GABiometricAuthenticationService.evaluatePolicy(using: context, withLocalizedReason: localizedReason) { (result) in
             
             switch result
             {
-            case .success   : resultBlock(true)
-            default         : resultBlock(false)
+            case .success:
+                
+                resultBlock(.allow)
+                GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
+                
+            case .userCancel:
+                
+                if #available(iOS 11.0, *)
+                {
+                    switch context.biometryType
+                    {
+                    case .touchID: resultBlock(.cancel)
+                    default: GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication(); resultBlock(.allow)
+                    }
+                }
+                else
+                {
+                    resultBlock(.cancel)
+                }
+                
+            default:
+                
+                GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
+                resultBlock(.doNotAllow)
             }
-        })
+        }
     }
     
-    class func register(forFaceIDWithLocalizedReason localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationResultBlock)
+    class func register(forFaceIDWithLocalizedReason localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
-        GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: localizedReason, authenticationForTouchID: false, result: resultBlock)
+        GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: localizedReason, authenticationForTouchID: false) { (result) in
+            
+            switch result
+            {
+            case .doNotAllow    : resultBlock(false)
+            default             : resultBlock(true)
+            }
+        }
     }
-
+    
     
     class func evaluateBiometricLocalAuthentication(localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
     {

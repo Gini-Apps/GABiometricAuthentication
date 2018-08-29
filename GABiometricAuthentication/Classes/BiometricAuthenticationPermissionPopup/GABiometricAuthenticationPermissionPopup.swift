@@ -11,9 +11,13 @@ import UIKit
 public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewController
 {
     // MARK: - IBOutlet
-    @IBOutlet weak var baseView: UIView!
-    @IBOutlet weak var messageBodyLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var baseView         : UIView!
+    @IBOutlet weak var titleLabel       : UILabel!
+    @IBOutlet weak var descriptionLabel : UILabel!
+    @IBOutlet weak var centerImage      : UIImageView!
+    @IBOutlet weak var allowButton      : UIButton!
+    @IBOutlet weak var doNotAllowButton : UIButton!
+    
     
     // MARK: - Properties
     private var businessLogic: GABiometricAuthenticationPermissionBusinessLogicProtocol?
@@ -33,7 +37,7 @@ public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewControl
     }
     
     // MARK: - IBAction
-    @IBAction func doneButtonDidTap()
+    @IBAction func allowButtonDidTap()
     {
         guard let businessLogic = businessLogic else
         {
@@ -43,13 +47,39 @@ public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewControl
         
         businessLogic.handleAllowAction()
     }
+    
+    @IBAction func doNotAllowButtonDidTap()
+    {
+        guard let businessLogic = businessLogic else
+        {
+            dismiss(animated: true)
+            return
+        }
+        
+        businessLogic.handleDoNotAllowAction()
+    }
 }
 
+// MARK: - GABiometricAuthenticationPermissionBusinessLogicDelegate
 extension GABiometricAuthenticationPermissionPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
 {
     func updateUI(byConfiguration uiConfiguration: GAFullScreenUIConfiguration)
     {
-        titleLabel.attributedText = uiConfiguration.titleText
+        view.backgroundColor                = uiConfiguration.backgroundColor
+        
+        titleLabel.attributedText           = uiConfiguration.titleText
+        descriptionLabel.attributedText     = uiConfiguration.descriptionText
+        centerImage.image                   = uiConfiguration.centerImage
+        
+        allowButton.backgroundColor         = uiConfiguration.allowButtonConfiguration.backgroundColor
+        allowButton.tintColor               = uiConfiguration.allowButtonConfiguration.textColor
+        
+        allowButton.setTitle(uiConfiguration.allowButtonConfiguration.text, for: .normal)
+        
+        doNotAllowButton.backgroundColor    = uiConfiguration.doNotAllowButtonConfiguration.backgroundColor
+        doNotAllowButton.tintColor          = uiConfiguration.doNotAllowButtonConfiguration.textColor
+        
+        doNotAllowButton.setTitle(uiConfiguration.doNotAllowButtonConfiguration.text, for: .normal)
     }
     
     func finish()

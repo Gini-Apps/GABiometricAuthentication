@@ -21,7 +21,7 @@ public struct GACustomUIConfiguration
 
 public class GABiometricAuthentication
 {
-    public static func registerForBiometricAuthentication(usingRegisterType type: GARegisterType, inViewController viewController: UIViewController)
+    public static func openRegisterForBiometricAuthentication(usingRegisterType type: GARegisterType, inViewController viewController: UIViewController)
     {
         //guard GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication() else { return }
         
@@ -37,7 +37,7 @@ public class GABiometricAuthentication
         }
     }
     
-    public static func registerForFaceID(localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationResultBlock)
+    public static func registerForFaceID(localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         GABiometricAuthenticationService.register(forFaceIDWithLocalizedReason: localizedReason, result: resultBlock)
     }

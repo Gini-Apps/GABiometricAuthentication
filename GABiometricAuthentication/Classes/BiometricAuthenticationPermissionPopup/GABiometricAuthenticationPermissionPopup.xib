@@ -17,8 +17,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GABiometricAuthenticationPermissionPopup" customModule="GABiometricAuthentication" customModuleProvider="target">
             <connections>
+                <outlet property="allowButton" destination="88V-Rh-vth" id="WlC-kq-AGx"/>
                 <outlet property="baseView" destination="KFG-Vi-RP0" id="kX0-07-ebf"/>
-                <outlet property="messageBodyLabel" destination="LA8-y8-7HN" id="RpO-VQ-3WZ"/>
+                <outlet property="centerImage" destination="bH0-gA-Rhk" id="8hb-h7-oQH"/>
+                <outlet property="descriptionLabel" destination="O7q-eZ-wJK" id="ly2-3c-r5x"/>
+                <outlet property="doNotAllowButton" destination="nrD-1w-VbJ" id="LIL-IG-GCY"/>
                 <outlet property="titleLabel" destination="LA8-y8-7HN" id="XzN-IY-o5x"/>
                 <outlet property="view" destination="OFX-Xf-ulg" id="uNJ-xs-iZ9"/>
             </connections>
@@ -47,15 +50,17 @@
                                     <state key="normal" title="Do Not Allow"/>
                                     <connections>
                                         <action selector="cancelButtonDidPress:" destination="-1" eventType="touchUpInside" id="Ffr-7J-I8i"/>
+                                        <action selector="doNotAllowButtonDidTap" destination="-1" eventType="touchUpInside" id="7XY-1H-3DD"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88V-Rh-vth">
                                     <rect key="frame" x="186.5" y="0.0" width="156.5" height="44"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Spoiler-Regular" family="Spoiler" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Allow"/>
                                     <connections>
-                                        <action selector="doneButtonDidTap" destination="-1" eventType="touchUpInside" id="mIb-Ok-Elh"/>
+                                        <action selector="allowButtonDidTap" destination="-1" eventType="touchUpInside" id="SFF-aa-UKA"/>
                                     </connections>
                                 </button>
                             </subviews>
