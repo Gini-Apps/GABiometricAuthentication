@@ -46,6 +46,18 @@ class GABiometricAuthenticationService
         return userDefaults.bool(forKey: BIOMETRIC_REGISTER_KEY)
     }
     
+    class func canEvaluatePolicyDeviceOwnerAuthenticationWithBiometrics() -> Bool
+    {
+        let context = LAContext()
+        var authError: NSError? = nil
+        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) else
+        {
+            return false
+        }
+        
+        return true
+    }
+    
     class func register(forBiometricLocalAuthenticationWithLocalizedReason localizedReason: String, authenticationForTouchID: Bool = true, result resultBlock: @escaping BiometricAuthenticationRegistrationResultBlock)
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication()

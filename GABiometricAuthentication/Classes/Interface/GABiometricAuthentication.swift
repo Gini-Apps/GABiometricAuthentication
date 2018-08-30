@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+/// Register popup type full scrren or custom ui
+///
+/// - fullScrrenUI: show view controoller on full screen and configur the UI by GAFullScreenConfiguration
+/// - customUI: show custom ui given by client using GACustomPopupConfiguration
 public enum GARegisterType
 {
     case fullScrrenUI(GAFullScreenConfiguration)
@@ -16,6 +21,21 @@ public enum GARegisterType
 
 public class GABiometricAuthentication
 {
+    
+    /// Call to LAContext canEvaluatePolicy with deviceOwnerAuthenticationWithBiometrics
+    ///
+    /// - Returns: true if canEvaluatePolicy succeeded
+    public static func canEvaluatePolicyDeviceOwnerAuthenticationWithBiometrics() -> Bool
+    {
+        return GABiometricAuthenticationService.canEvaluatePolicyDeviceOwnerAuthenticationWithBiometrics()
+    }
+    
+    /// Open custom popup before apple permission for FaceID or TouchID and ask the user to allow FaceID/TouchID,
+    /// TouchID do not need toggle apple permission alert so the custom popup is the only one the the  user see.
+    ///
+    /// - Parameters:
+    ///   - type: type of the popup
+    ///   - viewController: the parent view controller of the popup
     public static func openRegisterForBiometricAuthentication(usingRegisterType type: GARegisterType, inViewController viewController: UIViewController)
     {
         guard !GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication() else
@@ -23,6 +43,8 @@ public class GABiometricAuthentication
             print("user pass the permission with result: \(!GABiometricAuthenticationService.getUserRevokeBiometricAuthentication())")
             return
         }
+        
+        guard GABiometricAuthenticationService.canEvaluatePolicyDeviceOwnerAuthenticationWithBiometrics() else { return }
         
         switch type
         {
@@ -40,27 +62,50 @@ public class GABiometricAuthentication
         }
     }
     
+    
+    /// Toggle LAContext evaluatePolicy for the first time to toggle apple permission alert
+    ///
+    /// - Parameters:
+    ///   - localizedReason: why you need user BiometricAuthentication this will pass to LAContext evaluatePolicy
+    ///   - resultBlock: the LAContext evaluatePolicy result
     public static func registerForFaceID(localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         GABiometricAuthenticationService.register(forFaceIDWithLocalizedReason: localizedReason, result: resultBlock)
     }
     
-    public class func setUserRevokeBiometricAuthentication(_ isRevoke: Bool)
+    /// Stops the toggle of evaluateBiometricLocalAuthentication if get true (saved in user default)
+    ///
+    /// - Parameter isRevoke: should stop evaluateBiometricLocalAuthentication
+    public static func setUserRevokeBiometricAuthentication(_ isRevoke: Bool)
     {
         GABiometricAuthenticationService.setUserRevokeBiometricAuthentication(isRevoke)
     }
     
-    public class func getUserRevokeBiometricAuthentication() -> Bool
+    
+    /// Get the current value of UserRevokeBiometricAuthentication
+    ///
+    /// - Returns: the value of setUserRevokeBiometricAuthentication default false
+    public static func getUserRevokeBiometricAuthentication() -> Bool
     {
         return GABiometricAuthenticationService.getUserRevokeBiometricAuthentication()
     }
     
-    public class func evaluateBiometricLocalAuthentication(localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
+    
+    /// Toggle LAContext evaluatePolicy
+    ///
+    /// - Parameters:
+    ///   - localizedReason: Reason for the use of BiometricLocalAuthentication
+    ///   - result: the result of evaluatePolicy
+    public static func evaluateBiometricLocalAuthentication(localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
     {
         GABiometricAuthenticationService.evaluateBiometricLocalAuthentication(localizedReason: localizedReason, withResult: result)
     }
-    
-    public class func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
+
+    /// Call this if you get FaceID/TouchID is locked to toggle passcode to unlock the FaceID/TouchID
+    ///
+    /// - Parameters:
+    ///   - resultBlock: the result of passcode 
+    public static func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         GABiometricAuthenticationService.unlockBiometricLocalAuthentication(withResult: resultBlock)
     }
