@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270410CA2137D04E00E09586 /* CustomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270410C92137D04E00E09586 /* CustomPopupViewController.swift */; };
+		270410CC2137D11900E09586 /* NibDesignableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270410CB2137D11900E09586 /* NibDesignableProtocol.swift */; };
+		270410CF2137D16900E09586 /* MyCustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270410CE2137D16900E09586 /* MyCustomPopupView.swift */; };
+		270410D12137D17600E09586 /* MyCustomPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270410D02137D17600E09586 /* MyCustomPopupView.xib */; };
+		270410D42137DA9C00E09586 /* ToggelTouchIDFaceIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270410D32137DA9C00E09586 /* ToggelTouchIDFaceIDViewController.swift */; };
+		270410D62137DE6000E09586 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270410D52137DE6000E09586 /* MyTableViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -32,6 +38,12 @@
 		0F748E4CEA683CCA5385B9DA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		15621A744A4C8FF6EDB0F08D /* Pods-GABiometricAuthentication_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GABiometricAuthentication_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GABiometricAuthentication_Tests/Pods-GABiometricAuthentication_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1A296B339E3F680BC228BB18 /* Pods_GABiometricAuthentication_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABiometricAuthentication_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		270410C92137D04E00E09586 /* CustomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupViewController.swift; sourceTree = "<group>"; };
+		270410CB2137D11900E09586 /* NibDesignableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibDesignableProtocol.swift; sourceTree = "<group>"; };
+		270410CE2137D16900E09586 /* MyCustomPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomPopupView.swift; sourceTree = "<group>"; };
+		270410D02137D17600E09586 /* MyCustomPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCustomPopupView.xib; sourceTree = "<group>"; };
+		270410D32137DA9C00E09586 /* ToggelTouchIDFaceIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggelTouchIDFaceIDViewController.swift; sourceTree = "<group>"; };
+		270410D52137DE6000E09586 /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GABiometricAuthentication_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GABiometricAuthentication_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +81,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270410C72137D01500E09586 /* DefaultUI */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+			);
+			path = DefaultUI;
+			sourceTree = "<group>";
+		};
+		270410C82137D02D00E09586 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				270410CD2137D12F00E09586 /* popupView */,
+				270410C92137D04E00E09586 /* CustomPopupViewController.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		270410CD2137D12F00E09586 /* popupView */ = {
+			isa = PBXGroup;
+			children = (
+				270410CB2137D11900E09586 /* NibDesignableProtocol.swift */,
+				270410CE2137D16900E09586 /* MyCustomPopupView.swift */,
+				270410D02137D17600E09586 /* MyCustomPopupView.xib */,
+			);
+			path = popupView;
+			sourceTree = "<group>";
+		};
+		270410D22137DA7500E09586 /* ToggelTouchIDFaceID  */ = {
+			isa = PBXGroup;
+			children = (
+				270410D32137DA9C00E09586 /* ToggelTouchIDFaceIDViewController.swift */,
+			);
+			path = "ToggelTouchIDFaceID ";
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +141,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				270410D52137DE6000E09586 /* MyTableViewController.swift */,
+				270410D22137DA7500E09586 /* ToggelTouchIDFaceID  */,
+				270410C82137D02D00E09586 /* CustomUI */,
+				270410C72137D01500E09586 /* DefaultUI */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -252,6 +302,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				270410D12137D17600E09586 /* MyCustomPopupView.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,8 +423,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270410D42137DA9C00E09586 /* ToggelTouchIDFaceIDViewController.swift in Sources */,
+				270410D62137DE6000E09586 /* MyTableViewController.swift in Sources */,
+				270410CF2137D16900E09586 /* MyCustomPopupView.swift in Sources */,
+				270410CA2137D04E00E09586 /* CustomPopupViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				270410CC2137D11900E09586 /* NibDesignableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

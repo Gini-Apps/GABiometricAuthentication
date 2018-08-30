@@ -32,6 +32,7 @@ enum RegistrationResult
 
 public typealias BiometricAuthenticationResultBlock = (BiometricAuthenticationResult) -> Void
 public typealias BiometricAuthenticationRegistrationSuccessBlock = (_ success: Bool) -> Void
+
 typealias BiometricAuthenticationRegistrationResultBlock = (RegistrationResult) -> Void
 
 class GABiometricAuthenticationService
@@ -177,7 +178,7 @@ class GABiometricAuthenticationService
         }
     }
     
-    class func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping (_ success: Bool) -> Void)
+    class func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication() == true
         {
@@ -248,7 +249,7 @@ class GABiometricAuthenticationService
         })
     }
     
-    class func evaluateError(_ error: Error) -> BiometricAuthenticationResult
+    private class func evaluateError(_ error: Error) -> BiometricAuthenticationResult
     {
         var result: BiometricAuthenticationResult
         

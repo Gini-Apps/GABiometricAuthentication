@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GABiometricAuthenticationPermissionFullScreenPopup" customModule="GABiometricAuthentication" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GABiometricAuthenticationPermissionFullScreenPopupViewController" customModule="GABiometricAuthentication" customModuleProvider="target">
             <connections>
                 <outlet property="allowButton" destination="88V-Rh-vth" id="WlC-kq-AGx"/>
                 <outlet property="baseView" destination="KFG-Vi-RP0" id="kX0-07-ebf"/>

@@ -13,7 +13,7 @@
         <!--Root View Controller-->
         <scene sceneID="UTF-hJ-5yw">
             <objects>
-                <tableViewController id="yhD-ZQ-9g9" sceneMemberID="viewController">
+                <tableViewController id="yhD-ZQ-9g9" customClass="MyTableViewController" customModule="GABiometricAuthentication_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fvH-Xk-H6s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +45,83 @@
                                             <segue destination="vXZ-lx-hvc" kind="show" id="bdF-hg-Cqd"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="7di-EK-yyR">
+                                        <rect key="frame" x="0.0" y="79" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7di-EK-yyR" id="D6h-wD-tnk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom UI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-Ln-kMh">
+                                                    <rect key="frame" x="16" y="26.5" width="343" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jZr-Ln-kMh" firstAttribute="leading" secondItem="D6h-wD-tnk" secondAttribute="leadingMargin" id="eZS-Gx-8VY"/>
+                                                <constraint firstItem="jZr-Ln-kMh" firstAttribute="centerY" secondItem="D6h-wD-tnk" secondAttribute="centerY" id="gHV-I6-cfI"/>
+                                                <constraint firstItem="jZr-Ln-kMh" firstAttribute="trailing" secondItem="D6h-wD-tnk" secondAttribute="trailingMargin" id="jYQ-Vm-8yL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TF2-Ho-Gev" kind="show" id="9pv-J5-kL7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="hnQ-eq-ECa">
+                                        <rect key="frame" x="0.0" y="158" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnQ-eq-ECa" id="4F3-PI-0py">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggel TouchID/FaceID " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU5-ys-KNP">
+                                                    <rect key="frame" x="16" y="26.5" width="343" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zU5-ys-KNP" firstAttribute="leading" secondItem="4F3-PI-0py" secondAttribute="leadingMargin" id="eP4-GL-Pef"/>
+                                                <constraint firstItem="zU5-ys-KNP" firstAttribute="trailing" secondItem="4F3-PI-0py" secondAttribute="trailingMargin" id="vDJ-Tg-VFY"/>
+                                                <constraint firstItem="zU5-ys-KNP" firstAttribute="centerY" secondItem="4F3-PI-0py" secondAttribute="centerY" id="xPH-ea-brd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mXf-Xb-WaA" kind="show" id="6S9-NV-5eQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="Erw-mv-YQC">
+                                        <rect key="frame" x="0.0" y="237" width="375" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Erw-mv-YQC" id="2mO-86-yPu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow TouchID/FaceID " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZi-S9-god">
+                                                    <rect key="frame" x="16" y="26.5" width="343" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdA-fI-WMZ">
+                                                    <rect key="frame" x="301" y="24" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="updateUerRevoke:" destination="yhD-ZQ-9g9" eventType="valueChanged" id="JBu-Fo-ntY"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sdA-fI-WMZ" secondAttribute="trailing" constant="9" id="0AU-C1-JdK"/>
+                                                <constraint firstItem="NZi-S9-god" firstAttribute="centerY" secondItem="2mO-86-yPu" secondAttribute="centerY" id="2wz-vq-vQh"/>
+                                                <constraint firstItem="sdA-fI-WMZ" firstAttribute="centerY" secondItem="NZi-S9-god" secondAttribute="centerY" id="e7I-Nj-kNk"/>
+                                                <constraint firstItem="NZi-S9-god" firstAttribute="leading" secondItem="2mO-86-yPu" secondAttribute="leadingMargin" id="rjN-zq-Uzs"/>
+                                                <constraint firstItem="NZi-S9-god" firstAttribute="trailing" secondItem="2mO-86-yPu" secondAttribute="trailingMargin" id="tVs-5x-Ihn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -54,10 +131,67 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="4CN-pl-LgL"/>
+                    <connections>
+                        <outlet property="revokeSwitch" destination="sdA-fI-WMZ" id="BsF-yN-dzw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4x5-QB-n2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258.39999999999998" y="63.418290854572717"/>
+        </scene>
+        <!--Toggel TouchID FaceID View Controller-->
+        <scene sceneID="N9u-Ta-JVN">
+            <objects>
+                <viewController id="mXf-Xb-WaA" customClass="ToggelTouchIDFaceIDViewController" customModule="GABiometricAuthentication_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u8m-yZ-9Pb"/>
+                        <viewControllerLayoutGuide type="bottom" id="XfL-Sf-8fi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U9u-i8-YJX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-AD-ghz">
+                                <rect key="frame" x="106" y="293.5" width="163" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-oh-9GN">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
+                                        <state key="normal" title="Toggel TouchID/FaceID "/>
+                                        <connections>
+                                            <action selector="toggelTouchIDFaceIDDidTap:" destination="mXf-Xb-WaA" eventType="touchUpInside" id="f5S-I5-OCk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEi-29-U3h">
+                                        <rect key="frame" x="0.0" y="50" width="163" height="30"/>
+                                        <state key="normal" title="Unlock TouchID/FaceID "/>
+                                        <connections>
+                                            <action selector="unlockTouchIDFaceIDDidTap:" destination="mXf-Xb-WaA" eventType="touchUpInside" id="rNs-Df-mwf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIB-jU-QRH">
+                                <rect key="frame" x="166" y="118" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gfQ-AD-ghz" firstAttribute="centerX" secondItem="U9u-i8-YJX" secondAttribute="centerX" id="74H-Wz-fim"/>
+                            <constraint firstItem="BIB-jU-QRH" firstAttribute="centerX" secondItem="U9u-i8-YJX" secondAttribute="centerX" id="8wN-su-y23"/>
+                            <constraint firstItem="BIB-jU-QRH" firstAttribute="top" secondItem="u8m-yZ-9Pb" secondAttribute="bottom" constant="54" id="GDb-e7-RNV"/>
+                            <constraint firstItem="gfQ-AD-ghz" firstAttribute="centerY" secondItem="U9u-i8-YJX" secondAttribute="centerY" id="gXQ-dR-Mt1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="BIB-jU-QRH" id="fXd-el-gPq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgi-3m-CIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="886"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0D5-Gc-kL1">
@@ -104,7 +238,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="72"/>
+            <point key="canvasLocation" x="1092" y="550"/>
+        </scene>
+        <!--Custom Popup View Controller-->
+        <scene sceneID="gzu-V0-HnB">
+            <objects>
+                <viewController id="TF2-Ho-Gev" customClass="CustomPopupViewController" customModule="GABiometricAuthentication_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WWt-fE-fVK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cs6-Zh-Aha"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ztt-8C-IeD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0c-0C-G23">
+                                <rect key="frame" x="139" y="318.5" width="97" height="30"/>
+                                <state key="normal" title="Register small"/>
+                                <connections>
+                                    <action selector="registerCustomSizeDidPrass:" destination="TF2-Ho-Gev" eventType="touchUpInside" id="Szd-0e-NWc"/>
+                                    <action selector="registerDidPrass:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ja6-K5-JJC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bX-7t-VNZ">
+                                <rect key="frame" x="92" y="244.5" width="192" height="30"/>
+                                <state key="normal" title="Register Custom Full screen"/>
+                                <connections>
+                                    <action selector="registerFullScreenDidPrass:" destination="TF2-Ho-Gev" eventType="touchUpInside" id="CPK-NM-75p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w0c-0C-G23" firstAttribute="centerY" secondItem="ztt-8C-IeD" secondAttribute="centerY" id="AYc-UO-Jn1"/>
+                            <constraint firstItem="w0c-0C-G23" firstAttribute="centerX" secondItem="ztt-8C-IeD" secondAttribute="centerX" id="GAS-rl-TrP"/>
+                            <constraint firstItem="w0c-0C-G23" firstAttribute="top" secondItem="0bX-7t-VNZ" secondAttribute="bottom" constant="44" id="VJL-bN-qcg"/>
+                            <constraint firstItem="0bX-7t-VNZ" firstAttribute="centerX" secondItem="ztt-8C-IeD" secondAttribute="centerX" id="wzO-Y1-CrM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lsw-7b-1Oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="-111"/>
         </scene>
     </scenes>
 </document>

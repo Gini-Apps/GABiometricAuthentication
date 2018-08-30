@@ -11,7 +11,7 @@ import Foundation
 public enum GARegisterType
 {
     case fullScrrenUI(GAFullScreenConfiguration)
-    case customUI(GACustomUIConfiguration)
+    case customUI(GACustomPopupConfiguration)
 }
 
 public class GABiometricAuthentication
@@ -28,17 +28,41 @@ public class GABiometricAuthentication
         {
         case .fullScrrenUI(let configuration):
             
-            let popup = GABiometricAuthenticationPermissionFullScreenPopup(nibName: nil)
+            let popup = GABiometricAuthenticationPermissionFullScreenPopupViewController(nibName: nil)
             popup.configurationUI(byConfiguration: configuration)
             viewController.present(popup, animated: true, completion: nil)
             
-        default: break
+        case .customUI(let configuration):
+            
+            let popup = GABiometricAuthenticationPermissionCustomPopupViewController(nibName: nil)
+            popup.configurationUI(byConfiguration: configuration)
+            viewController.present(popup, animated: true, completion: nil)
         }
     }
     
     public static func registerForFaceID(localizedReason: String, result resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         GABiometricAuthenticationService.register(forFaceIDWithLocalizedReason: localizedReason, result: resultBlock)
+    }
+    
+    public class func setUserRevokeBiometricAuthentication(_ isRevoke: Bool)
+    {
+        GABiometricAuthenticationService.setUserRevokeBiometricAuthentication(isRevoke)
+    }
+    
+    public class func getUserRevokeBiometricAuthentication() -> Bool
+    {
+        return GABiometricAuthenticationService.getUserRevokeBiometricAuthentication()
+    }
+    
+    public class func evaluateBiometricLocalAuthentication(localizedReason: String, withResult result: @escaping BiometricAuthenticationResultBlock)
+    {
+        GABiometricAuthenticationService.evaluateBiometricLocalAuthentication(localizedReason: localizedReason, withResult: result)
+    }
+    
+    public class func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
+    {
+        GABiometricAuthenticationService.unlockBiometricLocalAuthentication(withResult: resultBlock)
     }
 }
 
