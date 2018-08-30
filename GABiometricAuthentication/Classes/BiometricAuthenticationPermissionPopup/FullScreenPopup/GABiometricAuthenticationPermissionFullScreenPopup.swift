@@ -1,5 +1,5 @@
 //
-//  GABiometricAuthenticationPermissionPopup.swift
+//  GABiometricAuthenticationPermissionFullScreenPopup.swift
 //  GABiometricAuthentication
 //
 //  Created by ido meirov on 24/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewController
+public class GABiometricAuthenticationPermissionFullScreenPopup: GABasePopAlertViewController
 {
     // MARK: - IBOutlet
     @IBOutlet weak var baseView         : UIView!
@@ -61,7 +61,7 @@ public class GABiometricAuthenticationPermissionPopup: GABasePopAlertViewControl
 }
 
 // MARK: - GABiometricAuthenticationPermissionBusinessLogicDelegate
-extension GABiometricAuthenticationPermissionPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
+extension GABiometricAuthenticationPermissionFullScreenPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
 {
     func updateUI(byConfiguration uiConfiguration: GAFullScreenUIConfiguration)
     {
@@ -89,9 +89,9 @@ extension GABiometricAuthenticationPermissionPopup: GABiometricAuthenticationPer
     }
 }
 
-extension GABiometricAuthenticationPermissionPopup: PopoverTransitionAnimationProtocol
+extension GABiometricAuthenticationPermissionFullScreenPopup: PopoverTransitionAnimationProtocol
 {
     public var viewForTransitionAnimation: UIView { return baseView }
 }
 
-extension GABiometricAuthenticationPermissionPopup: ClassInfoable {}
+extension GABiometricAuthenticationPermissionFullScreenPopup: ClassInfoable {}

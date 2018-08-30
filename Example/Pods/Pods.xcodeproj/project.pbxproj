@@ -23,13 +23,13 @@
 		98FBCABDF4320D8761359D843BE4660A /* GABiometricAuthentication-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3644220139FC5553667CB78A5900D618 /* GABiometricAuthentication-dummy.m */; };
 		9929026D4B92D43F3C2F2D9EAEFBD53A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		B575BD82771B9B0600B9773CDA135F59 /* PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93ABB49D8F5B8F17A36819E729B8A7 /* PresentationStyle.swift */; };
-		BBA68B5C147B5B14D91C9FC23DA967D8 /* GABiometricAuthenticationPermissionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionPopup.swift */; };
+		BBA68B5C147B5B14D91C9FC23DA967D8 /* GABiometricAuthenticationPermissionFullScreenPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionFullScreenPopup.swift */; };
 		C16A921CD88E562752C8F46B9AD0D7D6 /* GABiometricAuthentication-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B157AE0CFC8CE1BF28D233EC4005A250 /* GABiometricAuthentication-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C70EA1DFD06BB0CA8C17B1CC100E330D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
 		C78809439004DD6CB6B3887B3F539420 /* Pods-GABiometricAuthentication_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 073F638DBFD7922EBB1A97D89EDDA1C1 /* Pods-GABiometricAuthentication_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E45AFB39A171D83B89ACA2702DDB315D /* GABiometricAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BCEF74AFCAC9731FDB5CAB74FECB8 /* GABiometricAuthenticationService.swift */; };
 		E492C3B69319FD12A204E839D7CD5CB1 /* Pods-GABiometricAuthentication_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1378617A0E58D88B9DC4262C5C0B476 /* Pods-GABiometricAuthentication_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4B84C2F1B69B087A13530B5D300D55B /* GABiometricAuthenticationPermissionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionPopup.xib */; };
+		E4B84C2F1B69B087A13530B5D300D55B /* GABiometricAuthenticationPermissionFullScreenPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionFullScreenPopup.xib */; };
 		FC52FF7850A712E66A4F1304F73FFF23 /* PopAlertConfirmMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31208D7980595A6A1CEB65524151BFF /* PopAlertConfirmMethods.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,7 @@
 		95397A952635B8721895202FBA17EE98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		984EFCF615F5D02A1BCB739D483DA699 /* Pods-GABiometricAuthentication_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GABiometricAuthentication_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		992E89FDF0E8D3B2B080C5B8A1D3AA1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionPopup.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GABiometricAuthenticationPermissionPopup.xib; path = GABiometricAuthentication/Assets/PopUp/GABiometricAuthenticationPermissionPopup.xib; sourceTree = "<group>"; };
+		9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionFullScreenPopup.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GABiometricAuthenticationPermissionFullScreenPopup.xib; path = GABiometricAuthentication/Assets/PopUp/GABiometricAuthenticationPermissionFullScreenPopup.xib; sourceTree = "<group>"; };
 		A023EF884C5CAED553258467E98450E5 /* GABiometricAuthentication.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GABiometricAuthentication.xcconfig; sourceTree = "<group>"; };
 		A4F5F4354D311C85A0751DCD4CB9E64D /* Pods-GABiometricAuthentication_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GABiometricAuthentication_Example-dummy.m"; sourceTree = "<group>"; };
 		A57CBD5C045A2AB0121C264EEE7820F7 /* GABiometricAuthenticationPermissionBusinessLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionBusinessLogic.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C7D4248171C1DDFA55550B63E0822F35 /* Pods-GABiometricAuthentication_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GABiometricAuthentication_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CA9EA7CDA7DDFE895EE88E05A11D0AB9 /* Pods-GABiometricAuthentication_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GABiometricAuthentication_Tests-dummy.m"; sourceTree = "<group>"; };
-		D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionPopup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionPopup.swift; sourceTree = "<group>"; };
+		D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionFullScreenPopup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionFullScreenPopup.swift; sourceTree = "<group>"; };
 		D1378617A0E58D88B9DC4262C5C0B476 /* Pods-GABiometricAuthentication_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GABiometricAuthentication_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D7BC412B554706CBEE40A44DF3C59B0E /* Pods-GABiometricAuthentication_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GABiometricAuthentication_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				A57CBD5C045A2AB0121C264EEE7820F7 /* GABiometricAuthenticationPermissionBusinessLogic.swift */,
-				D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionPopup.swift */,
+				D0F991BA230EE0BA02FC7C843FA157DF /* GABiometricAuthenticationPermissionFullScreenPopup.swift */,
 			);
 			path = FullScreenPopup;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 		3CFF0A94B0555D2A9869897AAE02B2A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionPopup.xib */,
+				9B7A3F6EA13CEED7E971C963C4793A59 /* GABiometricAuthenticationPermissionFullScreenPopup.xib */,
 				8EF8F3C694872644708D2E791339EFEA /* GACustomPopupViewController.xib */,
 			);
 			name = Resources;
@@ -458,7 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B84C2F1B69B087A13530B5D300D55B /* GABiometricAuthenticationPermissionPopup.xib in Resources */,
+				E4B84C2F1B69B087A13530B5D300D55B /* GABiometricAuthenticationPermissionFullScreenPopup.xib in Resources */,
 				4E2DD4EEED8C21DBD76E183C646745DF /* GACustomPopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +491,7 @@
 				98FBCABDF4320D8761359D843BE4660A /* GABiometricAuthentication-dummy.m in Sources */,
 				7EA9063035723D1AAF59AC1D428BC0E5 /* GABiometricAuthentication.swift in Sources */,
 				4248CF313305F53BB3CDB586A4A2729E /* GABiometricAuthenticationPermissionBusinessLogic.swift in Sources */,
-				BBA68B5C147B5B14D91C9FC23DA967D8 /* GABiometricAuthenticationPermissionPopup.swift in Sources */,
+				BBA68B5C147B5B14D91C9FC23DA967D8 /* GABiometricAuthenticationPermissionFullScreenPopup.swift in Sources */,
 				E45AFB39A171D83B89ACA2702DDB315D /* GABiometricAuthenticationService.swift in Sources */,
 				1EC9C678C545125D3C238F4CDC676881 /* GACustomUIConfiguration.swift in Sources */,
 				005EF21CA2453D5D1FFDF9522DD679CC /* GAFullScreenConfigurations.swift in Sources */,

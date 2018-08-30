@@ -28,7 +28,7 @@ public class GABiometricAuthentication
         {
         case .fullScrrenUI(let configuration):
             
-            let popup = GABiometricAuthenticationPermissionPopup(nibName: nil)
+            let popup = GABiometricAuthenticationPermissionFullScreenPopup(nibName: nil)
             popup.configurationUI(byConfiguration: configuration)
             viewController.present(popup, animated: true, completion: nil)
             
