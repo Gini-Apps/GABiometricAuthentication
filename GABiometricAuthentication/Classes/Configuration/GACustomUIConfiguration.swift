@@ -7,7 +7,9 @@
 
 import UIKit
 
-public struct GACustomUIConfiguration
+public struct GACustomUIConfiguration: GABiometricAuthenticationPopupConfiguration
 {
-    let localizedReason: String
+    public let localizedReason  : String
+    public let resultBlock      : BiometricAuthenticationRegistrationSuccessBlock
+
 }

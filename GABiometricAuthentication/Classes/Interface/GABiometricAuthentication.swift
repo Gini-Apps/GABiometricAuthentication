@@ -20,7 +20,7 @@ public class GABiometricAuthentication
     {
         guard !GABiometricAuthenticationService.userDidShowPermissionForBiometricAuthentication() else
         {
-            print("user pass the permission with result: \(GABiometricAuthenticationService.getUserRevokeBiometricAuthentication())")
+            print("user pass the permission with result: \(!GABiometricAuthenticationService.getUserRevokeBiometricAuthentication())")
             return
         }
         

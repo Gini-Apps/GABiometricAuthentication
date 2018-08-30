@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct GAFullScreenConfiguration
+public struct GAFullScreenConfiguration: GABiometricAuthenticationPopupConfiguration
 {
     public let uiConfiguration  : GAFullScreenUIConfiguration
     public let localizedReason  : String

@@ -32,8 +32,9 @@ public class GABiometricAuthenticationPermissionFullScreenPopup: GABasePopAlertV
     // MARK: - Method
     func configurationUI(byConfiguration configuration: GAFullScreenConfiguration)
     {
-        businessLogic = GABiometricAuthenticationPermissionBusinessLogic(configuration: configuration)
-        businessLogic?.delegate = self
+        let biometricAuthenticationPermissionBusinessLogic = GABiometricAuthenticationPermissionFullScreenBusinessLogic(configuration: configuration)
+        biometricAuthenticationPermissionBusinessLogic.delegate = self
+        businessLogic = biometricAuthenticationPermissionBusinessLogic
     }
     
     // MARK: - IBAction
@@ -60,8 +61,8 @@ public class GABiometricAuthenticationPermissionFullScreenPopup: GABasePopAlertV
     }
 }
 
-// MARK: - GABiometricAuthenticationPermissionBusinessLogicDelegate
-extension GABiometricAuthenticationPermissionFullScreenPopup: GABiometricAuthenticationPermissionBusinessLogicDelegate
+// MARK: - GABiometricAuthenticationPermissionFullScreenBusinessLogicDelegate
+extension GABiometricAuthenticationPermissionFullScreenPopup: GABiometricAuthenticationPermissionFullScreenBusinessLogicDelegate
 {
     func updateUI(byConfiguration uiConfiguration: GAFullScreenUIConfiguration)
     {
