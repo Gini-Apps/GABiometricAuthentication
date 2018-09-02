@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoilerRegular.ttf">
+            <string>Spoiler-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyCustomPopupView" customModule="GABiometricAuthentication_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="allowButton" destination="QXc-l4-diX" id="8py-Jh-unn"/>
+                <outlet property="doNotAllowButton" destination="BQc-Ze-vCe" id="9Gn-EC-Rc2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="284"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Vh-PT-Hro">
+                    <rect key="frame" x="20" y="230" width="269" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-Ze-vCe">
+                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="44"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Spoiler-Regular" family="Spoiler" pointSize="18"/>
+                            <state key="normal" title="Do Not Allow"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXc-l4-diX">
+                            <rect key="frame" x="149.5" y="0.0" width="119.5" height="44"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Spoiler-Regular" family="Spoiler" pointSize="18"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Allow"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="l1l-Na-M6N"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pls give you youer permission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uui-dk-bE0">
+                    <rect key="frame" x="41.5" y="33" width="226" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.71372549019999998" green="0.61176470589999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uui-dk-bE0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="33" id="BSM-lS-Wrq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0Vh-PT-Hro" secondAttribute="bottom" constant="10" id="HAM-lY-J1k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Vh-PT-Hro" secondAttribute="trailing" constant="20" id="P9A-7D-rhv"/>
+                <constraint firstItem="uui-dk-bE0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q43-Gf-ibb"/>
+                <constraint firstItem="0Vh-PT-Hro" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="qci-fG-yP6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-15.5" y="29"/>
+        </view>
+    </objects>
+</document>

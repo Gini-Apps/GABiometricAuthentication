@@ -1,6 +1,6 @@
 //
 //  PresentationStyle.swift
-//  GACustomPopup
+//  GABiometricAuthentication
 //
 //  Created by Alex Pinhasov on 19/08/2018.
 //
