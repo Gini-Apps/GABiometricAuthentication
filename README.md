@@ -19,7 +19,6 @@
 1. [Requirements](#requirements)
 2. [Installation](#installation)
 3. [How to Use](#howToUse) 
-4. [Advanced uses](#advancedUses) 
 
 <a name="requirements"/>
 
@@ -56,8 +55,56 @@ $ pod install
 
 # How to Use:
 
+### Open Registertion Popup:
 
-<a name="advancedUses"/>
+#### Option 1 Use Default Size:
 
-# Advance Uses:
+import "GABiometricAuthentication", then create GAFullScreenConfiguration and call to the function openRegisterForBiometricAuthentication with type "fullScrrenUI" in the GABiometricAuthentication class
 
+```swift
+import GABiometricAuthentication
+
+let uiconfiguration = GAFullScreenUIConfiguration(titleText: NSAttributedString(string: "title"), descriptionText: NSAttributedString(string: "description"), backgroundColor: .white, centerImage: UIImage(named: "touch-id"), allowButtonConfiguration: GAFullScreenButtonConfiguration(backgroundColor: .black, textColor: .white, text: "Allow"), dontAllowButtonConfiguration: GAFullScreenButtonConfiguration(backgroundColor: .black, textColor: .white, text: "Do not Allow"))
+        
+let configuration = GAFullScreenConfiguration(uiConfiguration: uiconfiguration, localizedReason: "enter for password") { (result) in
+            
+            
+        }
+        
+GABiometricAuthentication.openRegisterForBiometricAuthentication(usingRegisterType: .fullScrrenUI(configuration), inViewController: self)
+```
+#### Option 2 Custom UI:
+
+Create object/view that implement CustomPopupUI 
+
+```swift
+import GABiometricAuthentication
+
+class MyCustomPopupView: UIView,CustomPopupUI
+{
+ 
+ var continerView: UIView
+ {
+        return self
+ }
+    
+    // MARK: - IBOutlet
+    @IBOutlet weak var allowButton      : UIButton! // subview of continerView
+    @IBOutlet weak var doNotAllowButton : UIButton! // subview of continerView
+}
+```
+
+Then create GACustomPopupConfiguration and pass the CustomPopupUI object using "GACustomPopupUIConfiguration".
+```swift
+
+let customPopupUI = MyCustomPopupView(frame: CGRect.zero)
+let uiconfiguration = GACustomPopupUIConfiguration(customPopupUI: customPopupUI, popupSize: CGSize(width: 309.0, height: 284.0))
+let configuration = GACustomPopupConfiguration(uiConfiguration: uiconfiguration, localizedReason: "enter for password") { (result) in
+
+}
+        
+```
+To show the registration popup call to the function openRegisterForBiometricAuthentication with type customUI in the GABiometricAuthentication class
+```swift
+GABiometricAuthentication.openRegisterForBiometricAuthentication(usingRegisterType: .customUI(configuration), inViewController: self)
+```
