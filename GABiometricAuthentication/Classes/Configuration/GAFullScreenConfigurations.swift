@@ -7,12 +7,23 @@
 
 import UIKit
 
+
+/// Configuration object for full screen biometricAuthentication user permission popup
 public struct GAFullScreenConfiguration: GABiometricAuthenticationPopupConfiguration
 {
-    public let uiConfiguration  : GAFullScreenUIConfiguration
-    public let localizedReason  : String
-    public let resultBlock      : BiometricAuthenticationRegistrationSuccessBlock
+    // MARK: - Properties
+    public let uiConfiguration  : GAFullScreenUIConfiguration // UI Configuration
+    public let localizedReason  : String // localizedReason for the LAContext
+    public let resultBlock      : BiometricAuthenticationRegistrationSuccessBlock // the result block
     
+    // MARK: - Object life cycle
+    
+    /// create instance of GAFullScreenConfiguration
+    ///
+    /// - Parameters:
+    ///   - uiConfiguration: the ui configuration
+    ///   - localizedReason: localizedReason for the LAContext
+    ///   - resultBlock: the result block
     public init(uiConfiguration: GAFullScreenUIConfiguration = GAFullScreenUIConfiguration(), localizedReason: String, resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         self.localizedReason    = localizedReason
@@ -23,6 +34,7 @@ public struct GAFullScreenConfiguration: GABiometricAuthenticationPopupConfigura
 
 public struct GAFullScreenUIConfiguration
 {
+    // MARK: - Properties
     public let titleText                        : NSAttributedString
     public let descriptionText                  : NSAttributedString
     public let backgroundColor                  : UIColor
@@ -30,6 +42,17 @@ public struct GAFullScreenUIConfiguration
     public let allowButtonConfiguration         : GAFullScreenButtonConfiguration
     public let doNotAllowButtonConfiguration    : GAFullScreenButtonConfiguration
     
+    // MARK: - Object life cycle
+    
+    /// create instance of GAFullScreenUIConfiguration
+    ///
+    /// - Parameters:
+    ///   - titleText: title text
+    ///   - descriptionText: description text
+    ///   - backgroundColor: popup backgroundColor
+    ///   - centerImage: popup center image
+    ///   - allowButtonConfiguration: the allow button configuration object
+    ///   - dontAllowButtonConfiguration: the do not allow button configuration object
     public init(titleText: NSAttributedString = NSAttributedString(string: ""), descriptionText: NSAttributedString = NSAttributedString(string: ""), backgroundColor: UIColor = UIColor.white, centerImage: UIImage? = nil, allowButtonConfiguration: GAFullScreenButtonConfiguration = GAFullScreenButtonConfiguration(text: "Allow"), dontAllowButtonConfiguration: GAFullScreenButtonConfiguration = GAFullScreenButtonConfiguration(text: "Don't Allow"))
     {
         self.titleText                      = titleText
@@ -43,10 +66,19 @@ public struct GAFullScreenUIConfiguration
 
 public struct GAFullScreenButtonConfiguration
 {
+    // MARK: - Properties
     public let backgroundColor  : UIColor
     public let textColor        : UIColor
     public let text             : String
     
+    // MARK: - Object life cycle
+    
+    /// create instance of GAFullScreenButtonConfiguration
+    ///
+    /// - Parameters:
+    ///   - backgroundColor: button backgroundColor
+    ///   - textColor: button tint color
+    ///   - text: button title for normal state
     public init(backgroundColor: UIColor = UIColor.clear, textColor: UIColor = UIColor(red: 0.0 / 255.0, green: 122.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0), text: String)
     {
         self.backgroundColor    = backgroundColor

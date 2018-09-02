@@ -32,6 +32,7 @@ public class GABiometricAuthentication
     
     /// Open custom popup before apple permission for FaceID or TouchID and ask the user to allow FaceID/TouchID,
     /// TouchID do not need toggle apple permission alert so the custom popup is the only one the the  user see.
+    /// This will only show the popup one in the app, to toggle apple permission or ask for permission use evaluateBiometricLocalAuthentication.
     ///
     /// - Parameters:
     ///   - type: type of the popup
@@ -104,7 +105,7 @@ public class GABiometricAuthentication
     /// Call this if you get FaceID/TouchID is locked to toggle passcode to unlock the FaceID/TouchID
     ///
     /// - Parameters:
-    ///   - resultBlock: the result of passcode 
+    ///   - resultBlock: the result of passcode
     public static func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         GABiometricAuthenticationService.unlockBiometricLocalAuthentication(withResult: resultBlock)
