@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// Register popup type full scrren or custom ui
 ///
 /// - fullScrrenUI: show view controoller on full screen and configur the UI by GAFullScreenConfiguration
