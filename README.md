@@ -105,6 +105,54 @@ let configuration = GACustomPopupConfiguration(uiConfiguration: uiconfiguration,
         
 ```
 To show the registration popup call to the function openRegisterForBiometricAuthentication with type customUI in the GABiometricAuthentication class
+
 ```swift
 GABiometricAuthentication.openRegisterForBiometricAuthentication(usingRegisterType: .customUI(configuration), inViewController: self)
 ```
+
+### Toggle Enter Biometric Local Authentication:
+
+ call to evaluateBiometricLocalAuthentication in GABiometricAuthentication.
+ pass to the function the localizedReason for using the biometric authentication and 
+ the results block 
+ 
+ ```swift
+ GABiometricAuthentication.evaluateBiometricLocalAuthentication(localizedReason: "showPassword") { [weak self] (result) in
+ 
+    guard let strongSelf = self else { return }
+            
+    switch result
+    {
+    case .success   : strongSelf.resultLabel.text = "success"
+    default         : strongSelf.resultLabel.text = "failed"
+    }
+}
+ ```
+ 
+ ### Unlock Biometric Local Authentication:
+ 
+ if the user try more then the available number of tries the system will lock the biometric local authentication,
+ to unlock it call to unlockBiometricLocalAuthentication in GABiometricAuthentication
+ 
+ 
+ ```swift
+ GABiometricAuthentication.unlockBiometricLocalAuthentication(byLocalizedReason: "Access your password") { [weak self] (result) in
+            
+    guard let strongSelf = self else { return }
+            
+    switch result
+    {
+    case true   : strongSelf.resultLabel.text = "success"
+    case false  : strongSelf.resultLabel.text = ""
+    }
+            
+}
+ ```
+ 
+  ### Check if Biometric Local Authentication Available:
+  
+  to check if user can use biometric local authentication 
+  ```swift
+  let canUseBiometric = GABiometricAuthentication.canEvaluatePolicyDeviceOwnerAuthenticationWithBiometrics()
+  ```
+
