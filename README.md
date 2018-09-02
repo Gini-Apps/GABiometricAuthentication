@@ -15,6 +15,10 @@
   <img alt="Swift" src="https://img.shields.io/badge/platform-ios-lightgrey.svg">
 </p>
 
+<p align="center">
+  <a href="https://www.cocoacontrols.com/controls/gainfinitecollectionkit-ios-1188a0d0-b0df-4e50-9536-65f4019b0ec0"><img src = "https://github.com/shay-somech/GABiometricAuthentication/blob/master/Documents/ScreenRecording_09-02-2018%2014:24.gif"></a>	  
+</p>
+
 #### Table of Contents  
 1. [Requirements](#requirements)
 2. [Installation](#installation)
