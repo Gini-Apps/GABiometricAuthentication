@@ -37,14 +37,14 @@ CocoaPods is a dependency manager for Cocoa projects. You can install it with th
 ```
 $ gem install cocoapods
 ```
-To integrate GAInfiniteCollectionKit-iOS into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate GABiometricAuthentication into your Xcode project using CocoaPods, specify it in your Podfile:
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-  pod 'GAInfiniteCollectionKit-iOS'
+  pod 'GABiometricAuthentication'
 end
 ```
 Then, run the following command:
