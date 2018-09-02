@@ -105,9 +105,9 @@ public class GABiometricAuthentication
     ///
     /// - Parameters:
     ///   - resultBlock: the result of passcode
-    public static func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
+    public static func unlockBiometricLocalAuthentication(byLocalizedReason localizedReason: String = "Access your password", withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
-        GABiometricAuthenticationService.unlockBiometricLocalAuthentication(withResult: resultBlock)
+        GABiometricAuthenticationService.unlockBiometricLocalAuthentication(byLocalizedReason: localizedReason, withResult: resultBlock)
     }
 }
 

@@ -40,7 +40,7 @@ class ToggelTouchIDFaceIDViewController: UIViewController {
 
     @IBAction func unlockTouchIDFaceIDDidTap(_ sender: Any)
     {
-        GABiometricAuthentication.unlockBiometricLocalAuthentication { [weak self] (result) in
+        GABiometricAuthentication.unlockBiometricLocalAuthentication(byLocalizedReason: "Access your password") { [weak self] (result) in
             
             guard let strongSelf = self else { return }
             

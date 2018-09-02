@@ -247,7 +247,7 @@ class GABiometricAuthenticationService
     }
     
     // MARK: - Unlock Biometric Local Authentication
-    class func unlockBiometricLocalAuthentication(withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
+    class func unlockBiometricLocalAuthentication(byLocalizedReason localizedReason: String, withResult resultBlock: @escaping BiometricAuthenticationRegistrationSuccessBlock)
     {
         if GABiometricAuthenticationService.getUserRevokeBiometricAuthentication() == true
         {
@@ -256,7 +256,7 @@ class GABiometricAuthenticationService
         }
         
         let context = LAContext()
-        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Access your password", reply: { success, error in
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: localizedReason, reply: { success, error in
             
             DispatchQueue.main.async(execute: {
                 
