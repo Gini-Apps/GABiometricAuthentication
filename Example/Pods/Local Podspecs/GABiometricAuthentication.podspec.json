@@ -1,8 +1,8 @@
 {
   "name": "GABiometricAuthentication",
-  "version": "0.1.0",
-  "summary": "A short description of GABiometricAuthentication.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "2.0.0",
+  "summary": "This is pod handle BiometricAuthentication",
+  "description": "This is pod handle BiometricAuthentication in the LocalAuthentication framework",
   "homepage": "https://github.com/shay-somech/GABiometricAuthentication",
   "license": {
     "type": "MIT",
@@ -13,9 +13,9 @@
   },
   "source": {
     "git": "https://github.com/shay-somech/GABiometricAuthentication.git",
-    "tag": "0.1.0"
+    "tag": "2.0.0"
   },
-  "swift_version": "4.1",
+  "swift_version": "4.2",
   "platforms": {
     "ios": "9.0"
   },
