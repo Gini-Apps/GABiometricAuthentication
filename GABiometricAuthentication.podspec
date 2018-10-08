@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GABiometricAuthentication'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'This is pod handle BiometricAuthentication'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 This is pod handle BiometricAuthentication in the LocalAuthentication framework
                        DESC
 
-  s.homepage         = 'https://github.com/shay-somech/GABiometricAuthentication'
+  s.homepage         = 'https://github.com/Gini-Apps/GABiometricAuthentication'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'idoMeirov' => 'idom@gini-apps.com' }
-  s.source           = { :git => 'https://github.com/shay-somech/GABiometricAuthentication.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Gini-Apps/GABiometricAuthentication.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.swift_version    = '4.2'

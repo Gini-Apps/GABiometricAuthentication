@@ -1,5 +1,5 @@
 PODS:
-  - GABiometricAuthentication (2.0.0)
+  - GABiometricAuthentication (2.0.1)
 
 DEPENDENCIES:
   - GABiometricAuthentication (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GABiometricAuthentication: 60e892cc4c385c5451dba10a03104713b5b92a1a
+  GABiometricAuthentication: baa7b5d5e52ec48af8773fe9a659a3dbdba29e24
 
 PODFILE CHECKSUM: a75e5292288f1fb2974d0d2645c8661d6126e3bf
 
