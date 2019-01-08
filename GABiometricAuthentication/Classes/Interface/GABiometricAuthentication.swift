@@ -125,24 +125,7 @@ extension GABiometricAuthentication
     /// - Returns: alertConroller with style alert
     private static func createAlertController(fromConfiguration configuration: GAAlertConfiguration) -> UIAlertController
     {
-        let uiConfiguration = configuration.uiConfiguration
-        var alertController = UIAlertController(title: uiConfiguration.titleText, message: uiConfiguration.descriptionText, preferredStyle: .alert)
-        
-        let ok = UIAlertAction(title: uiConfiguration.allowButtonConfiguration.text, style: uiConfiguration.allowButtonConfiguration.style)
-        { (action) in
-            
-            GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: configuration.localizedReason)
-            { (result) in
-                
-                GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
-                switch result
-                {
-                case .allow         : configuration.resultBlock(true)
-                case .doNotAllow    : configuration.resultBlock(false)
-                case .cancel        : break
-                }
-            }
-        }
+        let alertController = GAAlertController(configuration: configuration)
         
         return alertController
     }
@@ -158,11 +141,20 @@ class GAAlertController: UIAlertController
         let uiConfiguration = configuration.uiConfiguration
         self.init(title: uiConfiguration.titleText, message: uiConfiguration.descriptionText, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: uiConfiguration.allowButtonConfiguration.text, style: uiConfiguration.allowButtonConfiguration.style)
+        let allowAction = UIAlertAction(title: uiConfiguration.allowButtonConfiguration.text, style: uiConfiguration.allowButtonConfiguration.style)
         { (action) in
             
             bb.handleAllowAction()
         }
+        
+        let doNotAllowAction = UIAlertAction(title: uiConfiguration.doNotAllowButtonConfiguration.text, style: uiConfiguration.doNotAllowButtonConfiguration.style)
+        { (action) in
+            
+            bb.handleDoNotAllowAction()
+        }
+        
+        addAction(allowAction)
+        addAction(doNotAllowAction)
     }
 }
 
@@ -178,8 +170,8 @@ class GABiometricAuthenticationPermissionAlertBusinessLogic: GABiometricAuthenti
             strongSelf.onAllowAction = false
             switch result
             {
-            case .allow         : strongSelf.configuration.resultBlock(true)
-            case .doNotAllow    : strongSelf.configuration.resultBlock(false)
+            case .allow         : strongSelf.configuration.resultBlock(true); strongSelf.handleDismiss()
+            case .doNotAllow    : strongSelf.configuration.resultBlock(false); strongSelf.handleDismiss()
             case .cancel        : break
             }
         }
@@ -187,7 +179,7 @@ class GABiometricAuthenticationPermissionAlertBusinessLogic: GABiometricAuthenti
     
     override func doNotAllowActionDidFinish()
     {
-        
+        handleDismiss()
     }
     
     
