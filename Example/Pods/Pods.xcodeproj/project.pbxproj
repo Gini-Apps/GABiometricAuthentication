@@ -16,6 +16,7 @@
 		193318A9F2F8136E6AD9CDFD48BC1A5C /* GABiometricAuthentication-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FBDA1BA022B6B45BC6CECB8EF1B105 /* GABiometricAuthentication-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		202F4682ADF9336678AACA667E1B9F79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		223D7002F8423C765448A824FE0778B4 /* GABiometricAuthenticationPermissionBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065823CFD9B2AA869C5212ECC24059B /* GABiometricAuthenticationPermissionBusinessLogic.swift */; };
+		27386CC421E4DBB7001A9191 /* GAAlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27386CC321E4DBB7001A9191 /* GAAlertConfiguration.swift */; };
 		2A4385F277318EFD4149BC80DCEE341C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
 		333A56719E3BD7D6E67EC93EFE61A8FB /* GABasePopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAA052D226348B9AE8ECE524D2DC39 /* GABasePopAlertViewController.swift */; };
 		39AF10CFB45728326EAD0AE4BC561BB1 /* PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D386CAEBE38749F7E2ED952ECBB7483 /* PresentationStyle.swift */; };
@@ -57,16 +58,17 @@
 /* Begin PBXFileReference section */
 		0012B851E201B3993342C2363F4FC1AA /* Pods-GABiometricAuthentication_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GABiometricAuthentication_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		073F638DBFD7922EBB1A97D89EDDA1C1 /* Pods-GABiometricAuthentication_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GABiometricAuthentication_Example-umbrella.h"; sourceTree = "<group>"; };
-		07F25E3DFC9038623E7B7C3D3652D59C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		07F25E3DFC9038623E7B7C3D3652D59C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1047146B0DF3B7DB5AC9620F02D71B44 /* Pods-GABiometricAuthentication_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GABiometricAuthentication_Example.modulemap"; sourceTree = "<group>"; };
 		105AEDE2DBECB1A3214B97BF93DD5136 /* Pods-GABiometricAuthentication_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GABiometricAuthentication_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		143D8116B081780A365E4D74E4EB06B5 /* GAPopoverAlertTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GAPopoverAlertTransition.swift; sourceTree = "<group>"; };
 		14EDFEBF45DDA384435FFBB66D954F2E /* GACustomPopupConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GACustomPopupConfiguration.swift; sourceTree = "<group>"; };
-		15C1F385AECB645C30EBFA6F184DAAAC /* GABiometricAuthentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GABiometricAuthentication.framework; path = GABiometricAuthentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15C1F385AECB645C30EBFA6F184DAAAC /* GABiometricAuthentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GABiometricAuthentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C64CC2ABC0AD026B1444524CD0589B0 /* GABiometricAuthentication.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GABiometricAuthentication.xcconfig; sourceTree = "<group>"; };
-		21777353122081966AB88093C7537024 /* GABiometricAuthentication.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = GABiometricAuthentication.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		21777353122081966AB88093C7537024 /* GABiometricAuthentication.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = GABiometricAuthentication.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		23FBDA1BA022B6B45BC6CECB8EF1B105 /* GABiometricAuthentication-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GABiometricAuthentication-umbrella.h"; sourceTree = "<group>"; };
 		243B35D2F727DBBC8C25DE6B926A501C /* Pods-GABiometricAuthentication_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GABiometricAuthentication_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		27386CC321E4DBB7001A9191 /* GAAlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAAlertConfiguration.swift; sourceTree = "<group>"; };
 		273F21883E4107D1AEA3C08D4CED76BB /* Pods-GABiometricAuthentication_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GABiometricAuthentication_Example-resources.sh"; sourceTree = "<group>"; };
 		28AD07740EF93752E17FEF6DA3D3DC40 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FAAA052D226348B9AE8ECE524D2DC39 /* GABasePopAlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABasePopAlertViewController.swift; sourceTree = "<group>"; };
@@ -76,16 +78,16 @@
 		4107D0F31C682C5E0DED594A2BECED91 /* Pods-GABiometricAuthentication_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GABiometricAuthentication_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		62F6AC10799163F6CE5FF3168C740CAA /* Pods-GABiometricAuthentication_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GABiometricAuthentication_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6A7801399583208774708945F732E97D /* GABiometricAuthentication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthentication.swift; sourceTree = "<group>"; };
-		6FFDCC2D77E76967570791A10483774D /* Pods_GABiometricAuthentication_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GABiometricAuthentication_Tests.framework; path = "Pods-GABiometricAuthentication_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FFDCC2D77E76967570791A10483774D /* Pods_GABiometricAuthentication_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABiometricAuthentication_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E836789715C74F6870E702248E048F /* GABiometricAuthenticationPopupConfiguration .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "GABiometricAuthenticationPopupConfiguration .swift"; sourceTree = "<group>"; };
 		739ABE162DCFC76E94CF3E4498F8979D /* GABiometricAuthenticationPermissionFullScreenPopupViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GABiometricAuthenticationPermissionFullScreenPopupViewController.xib; path = GABiometricAuthentication/Assets/PopUp/GABiometricAuthenticationPermissionFullScreenPopupViewController.xib; sourceTree = "<group>"; };
 		781F7789A05561E1F06E8B22F1BCC643 /* GABiometricAuthenticationPermissionCustomPopupBusinessLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionCustomPopupBusinessLogic.swift; sourceTree = "<group>"; };
 		7D386CAEBE38749F7E2ED952ECBB7483 /* PresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PresentationStyle.swift; sourceTree = "<group>"; };
-		7FB22F0E1ED0CFACAD2437D9F8243134 /* Pods_GABiometricAuthentication_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GABiometricAuthentication_Example.framework; path = "Pods-GABiometricAuthentication_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FB22F0E1ED0CFACAD2437D9F8243134 /* Pods_GABiometricAuthentication_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GABiometricAuthentication_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D737E6A275BCF144AB051FD4A8A1A0 /* Pods-GABiometricAuthentication_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GABiometricAuthentication_Tests.modulemap"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		92CF1D0672CE7B752D9D2ED3AEAD7365 /* GABiometricAuthentication.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GABiometricAuthentication.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9848188D897F5DDA2350F1B45387EE88 /* GABiometricAuthenticationPermissionCustomPopupViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionCustomPopupViewController.swift; sourceTree = "<group>"; };
 		984EFCF615F5D02A1BCB739D483DA699 /* Pods-GABiometricAuthentication_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GABiometricAuthentication_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		99E8EC99AD7E57AC329365EDDC768D4B /* ExtensionUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		9C2C7989C2E16F7B22FC02E3D0CEF3F4 /* GABiometricAuthenticationPermissionFullScreenBusinessLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionFullScreenBusinessLogic.swift; sourceTree = "<group>"; };
 		9E75C67B556B61744D0758C5554085CA /* PopoverTransitionAnimationProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PopoverTransitionAnimationProtocol.swift; sourceTree = "<group>"; };
 		9ECCE969F04445A4EFA493700E802926 /* GACustomPopupViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GACustomPopupViewController.xib; path = GABiometricAuthentication/Assets/PopUp/GACustomPopupViewController.xib; sourceTree = "<group>"; };
-		A3217EBD97B854C9824E5651332743AF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A3217EBD97B854C9824E5651332743AF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4F5F4354D311C85A0751DCD4CB9E64D /* Pods-GABiometricAuthentication_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GABiometricAuthentication_Example-dummy.m"; sourceTree = "<group>"; };
 		AFE2909A69643DD4238EFCC7A5E0AF9C /* GABiometricAuthentication-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GABiometricAuthentication-dummy.m"; sourceTree = "<group>"; };
 		B073C49EDAC4BAEEBA55C7D096140716 /* GABiometricAuthenticationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationService.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				14EDFEBF45DDA384435FFBB66D954F2E /* GACustomPopupConfiguration.swift */,
 				9B555F1BEE78375F04BA092694067721 /* GAFullScreenConfigurations.swift */,
+				27386CC321E4DBB7001A9191 /* GAAlertConfiguration.swift */,
 			);
 			name = Configuration;
 			path = GABiometricAuthentication/Classes/Configuration;
@@ -265,7 +268,6 @@
 			children = (
 				71E836789715C74F6870E702248E048F /* GABiometricAuthenticationPopupConfiguration .swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -303,7 +305,6 @@
 			children = (
 				4065823CFD9B2AA869C5212ECC24059B /* GABiometricAuthenticationPermissionBusinessLogic.swift */,
 			);
-			name = GABiometricAuthenticationPermissionBusinessLogic;
 			path = GABiometricAuthenticationPermissionBusinessLogic;
 			sourceTree = "<group>";
 		};
@@ -313,7 +314,6 @@
 				781F7789A05561E1F06E8B22F1BCC643 /* GABiometricAuthenticationPermissionCustomPopupBusinessLogic.swift */,
 				9848188D897F5DDA2350F1B45387EE88 /* GABiometricAuthenticationPermissionCustomPopupViewController.swift */,
 			);
-			name = CustomPopup;
 			path = CustomPopup;
 			sourceTree = "<group>";
 		};
@@ -323,7 +323,6 @@
 				9C2C7989C2E16F7B22FC02E3D0CEF3F4 /* GABiometricAuthenticationPermissionFullScreenBusinessLogic.swift */,
 				9BC4F8D225AF9229AC70606AD7D12D17 /* GABiometricAuthenticationPermissionFullScreenPopupViewController.swift */,
 			);
-			name = FullScreenPopup;
 			path = FullScreenPopup;
 			sourceTree = "<group>";
 		};
@@ -394,7 +393,6 @@
 			children = (
 				99E8EC99AD7E57AC329365EDDC768D4B /* ExtensionUIView.swift */,
 			);
-			name = Extension;
 			path = Extension;
 			sourceTree = "<group>";
 		};
@@ -558,6 +556,7 @@
 				0204D845ED7AA22485728C0A67AB5432 /* GAFullScreenConfigurations.swift in Sources */,
 				E8457A9A6BF47DA406CA6C6059FEA6E0 /* GAPopoverAlertTransition.swift in Sources */,
 				4C4C8A81D5E94751316AC1F5A09EE967 /* PopAlertConfirmMethods.swift in Sources */,
+				27386CC421E4DBB7001A9191 /* GAAlertConfiguration.swift in Sources */,
 				EE955E8E86A1A86CA74DC8E03A2C9B34 /* PopoverTransitionAnimationProtocol.swift in Sources */,
 				39AF10CFB45728326EAD0AE4BC561BB1 /* PresentationStyle.swift in Sources */,
 			);
@@ -717,8 +716,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -914,8 +912,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

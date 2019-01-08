@@ -16,6 +16,7 @@ public enum GARegisterType
 {
     case fullScrrenUI(GAFullScreenConfiguration)
     case customUI(GACustomPopupConfiguration)
+    case alertUI(GAAlertConfiguration)
 }
 
 public class GABiometricAuthentication
@@ -59,9 +60,13 @@ public class GABiometricAuthentication
             let popup = GABiometricAuthenticationPermissionCustomPopupViewController(nibName: nil)
             popup.configurationUI(byConfiguration: configuration)
             viewController.present(popup, animated: true, completion: nil)
+            
+        case .alertUI(let configuration):
+            
+            let alert  = createAlertController(fromConfiguration: configuration)
+            viewController.present(alert, animated: true, completion: nil)
         }
     }
-    
     
     /// Toggle LAContext evaluatePolicy for the first time to toggle apple permission alert
     ///
@@ -111,3 +116,83 @@ public class GABiometricAuthentication
     }
 }
 
+extension GABiometricAuthentication
+{
+    
+    /// Create UIAlertController with style alert by configuration object
+    ///
+    /// - Parameter configuration: the GAAlertConfiguration object
+    /// - Returns: alertConroller with style alert
+    private static func createAlertController(fromConfiguration configuration: GAAlertConfiguration) -> UIAlertController
+    {
+        let uiConfiguration = configuration.uiConfiguration
+        var alertController = UIAlertController(title: uiConfiguration.titleText, message: uiConfiguration.descriptionText, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: uiConfiguration.allowButtonConfiguration.text, style: uiConfiguration.allowButtonConfiguration.style)
+        { (action) in
+            
+            GABiometricAuthenticationService.register(forBiometricLocalAuthenticationWithLocalizedReason: configuration.localizedReason)
+            { (result) in
+                
+                GABiometricAuthenticationService.updateUserDidShowPermissionForBiometricAuthentication()
+                switch result
+                {
+                case .allow         : configuration.resultBlock(true)
+                case .doNotAllow    : configuration.resultBlock(false)
+                case .cancel        : break
+                }
+            }
+        }
+        
+        return alertController
+    }
+}
+
+
+class GAAlertController: UIAlertController
+{
+    
+    convenience init(configuration: GAAlertConfiguration)
+    {
+        let bb = GABiometricAuthenticationPermissionAlertBusinessLogic(configuration: configuration)
+        let uiConfiguration = configuration.uiConfiguration
+        self.init(title: uiConfiguration.titleText, message: uiConfiguration.descriptionText, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: uiConfiguration.allowButtonConfiguration.text, style: uiConfiguration.allowButtonConfiguration.style)
+        { (action) in
+            
+            bb.handleAllowAction()
+        }
+    }
+}
+
+class GABiometricAuthenticationPermissionAlertBusinessLogic: GABiometricAuthenticationPermissionBusinessLogic<GAAlertConfiguration>
+{
+    
+    // MARK: - Override
+    override func handleRegisterResults(_ result: RegistrationResult)
+    {
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.onAllowAction = false
+            switch result
+            {
+            case .allow         : strongSelf.configuration.resultBlock(true)
+            case .doNotAllow    : strongSelf.configuration.resultBlock(false)
+            case .cancel        : break
+            }
+        }
+    }
+    
+    override func doNotAllowActionDidFinish()
+    {
+        
+    }
+    
+    
+    override func handleViewDidLoad()
+    {
+        
+    }
+}
