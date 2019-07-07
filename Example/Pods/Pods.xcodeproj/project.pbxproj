@@ -17,6 +17,8 @@
 		202F4682ADF9336678AACA667E1B9F79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		223D7002F8423C765448A824FE0778B4 /* GABiometricAuthenticationPermissionBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065823CFD9B2AA869C5212ECC24059B /* GABiometricAuthenticationPermissionBusinessLogic.swift */; };
 		27386CC421E4DBB7001A9191 /* GAAlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27386CC321E4DBB7001A9191 /* GAAlertConfiguration.swift */; };
+		27386CC721E5B933001A9191 /* GAAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27386CC621E5B933001A9191 /* GAAlertController.swift */; };
+		27386CC921E5B93F001A9191 /* GABiometricAuthenticationPermissionAlertBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27386CC821E5B93F001A9191 /* GABiometricAuthenticationPermissionAlertBusinessLogic.swift */; };
 		2A4385F277318EFD4149BC80DCEE341C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
 		333A56719E3BD7D6E67EC93EFE61A8FB /* GABasePopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAAA052D226348B9AE8ECE524D2DC39 /* GABasePopAlertViewController.swift */; };
 		39AF10CFB45728326EAD0AE4BC561BB1 /* PresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D386CAEBE38749F7E2ED952ECBB7483 /* PresentationStyle.swift */; };
@@ -69,6 +71,8 @@
 		23FBDA1BA022B6B45BC6CECB8EF1B105 /* GABiometricAuthentication-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GABiometricAuthentication-umbrella.h"; sourceTree = "<group>"; };
 		243B35D2F727DBBC8C25DE6B926A501C /* Pods-GABiometricAuthentication_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GABiometricAuthentication_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		27386CC321E4DBB7001A9191 /* GAAlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAAlertConfiguration.swift; sourceTree = "<group>"; };
+		27386CC621E5B933001A9191 /* GAAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAAlertController.swift; sourceTree = "<group>"; };
+		27386CC821E5B93F001A9191 /* GABiometricAuthenticationPermissionAlertBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GABiometricAuthenticationPermissionAlertBusinessLogic.swift; sourceTree = "<group>"; };
 		273F21883E4107D1AEA3C08D4CED76BB /* Pods-GABiometricAuthentication_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GABiometricAuthentication_Example-resources.sh"; sourceTree = "<group>"; };
 		28AD07740EF93752E17FEF6DA3D3DC40 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FAAA052D226348B9AE8ECE524D2DC39 /* GABasePopAlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GABasePopAlertViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		246080B0232E83569690097366E1401F /* BiometricAuthenticationPermissionPopup */ = {
 			isa = PBXGroup;
 			children = (
+				27386CC521E5B907001A9191 /* Alert */,
 				980C9769754E0232478E461ABF3FBF82 /* CustomPopup */,
 				AF0E319C200F3179597E6209729B239E /* FullScreenPopup */,
 			);
@@ -198,6 +203,15 @@
 				6FFDCC2D77E76967570791A10483774D /* Pods_GABiometricAuthentication_Tests.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		27386CC521E5B907001A9191 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				27386CC621E5B933001A9191 /* GAAlertController.swift */,
+				27386CC821E5B93F001A9191 /* GABiometricAuthenticationPermissionAlertBusinessLogic.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		3BDCB4EE9C204A94A68D44D8687CF99E /* Pods-GABiometricAuthentication_Tests */ = {
@@ -548,9 +562,11 @@
 				223D7002F8423C765448A824FE0778B4 /* GABiometricAuthenticationPermissionBusinessLogic.swift in Sources */,
 				050B02C6A43D9286F68D2A5F4BA4E6EC /* GABiometricAuthenticationPermissionCustomPopupBusinessLogic.swift in Sources */,
 				C79C821D2E82EFF7F1002678CE87C2E4 /* GABiometricAuthenticationPermissionCustomPopupViewController.swift in Sources */,
+				27386CC921E5B93F001A9191 /* GABiometricAuthenticationPermissionAlertBusinessLogic.swift in Sources */,
 				75925860629019076858845AD18F51B0 /* GABiometricAuthenticationPermissionFullScreenBusinessLogic.swift in Sources */,
 				E59EA338EBEE87074C40B918414C805B /* GABiometricAuthenticationPermissionFullScreenPopupViewController.swift in Sources */,
 				C9935511C039E127336449E1752DC4A0 /* GABiometricAuthenticationPopupConfiguration .swift in Sources */,
+				27386CC721E5B933001A9191 /* GAAlertController.swift in Sources */,
 				490769B8B6CE4F567CB455D859D95C68 /* GABiometricAuthenticationService.swift in Sources */,
 				18E243569B3117E7AA0600C7050A2063 /* GACustomPopupConfiguration.swift in Sources */,
 				0204D845ED7AA22485728C0A67AB5432 /* GAFullScreenConfigurations.swift in Sources */,

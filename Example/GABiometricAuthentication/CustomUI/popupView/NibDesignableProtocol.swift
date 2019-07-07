@@ -39,7 +39,7 @@ public protocol NibDesignableProtocol : NSObjectProtocol
 }
 public extension NibDesignableProtocol where Self : UIView
 {
-    public var nibContainerView: UIView {
+    var nibContainerView: UIView {
         return self
     }
     
@@ -56,7 +56,7 @@ public extension NibDesignableProtocol where Self : UIView
      
      - returns: UIView instance loaded from a nib file.
      */
-    public func loadNib() -> UIView? {
+    func loadNib() -> UIView? {
         return Self.classNib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
@@ -65,7 +65,7 @@ public extension NibDesignableProtocol where Self : UIView
     /**
      Called in init(frame:) and init(aDecoder:) to load the nib and add it as a subview.
      */
-    public func setupNib() {
+    func setupNib() {
         
         guard let view = loadNib() else { return }
         nibContainerView.addSubview(view)
@@ -77,7 +77,7 @@ public extension NibDesignableProtocol where Self : UIView
 }
 fileprivate extension UIView
 {
-    fileprivate func constraintFrame(to superViewObject: UIView)
+    func constraintFrame(to superViewObject: UIView)
     {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -87,7 +87,7 @@ fileprivate extension UIView
         let trailingConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: superViewObject, attribute: .trailing, multiplier: 1.0, constant: 0.0)
         superViewObject.addConstraints([topConstraint,bottomConstraint,leadingConstraint,trailingConstraint])
     }
-    fileprivate static func addViewConstraintsForTopLevelView(View view : UIView, superView : UIView) -> Void
+    static func addViewConstraintsForTopLevelView(View view : UIView, superView : UIView) -> Void
     {
         view.constraintFrame(to: superView)
     }
