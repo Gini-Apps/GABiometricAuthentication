@@ -57,7 +57,7 @@ public class GABiometricAuthentication
             
         case .customUI(let configuration):
             
-            let popup = GABiometricAuthenticationPermissionCustomPopupViewController(nibName: nil)
+            let popup = GABiometricAuthenticationPermissionCustomPopupViewController(nibName: "GACustomPopupViewController", bundle: Bundle(for: self.self))
             popup.configurationUI(byConfiguration: configuration)
             viewController.present(popup, animated: true, completion: nil)
             

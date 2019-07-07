@@ -15,11 +15,12 @@
     "git": "https://github.com/Gini-Apps/GABiometricAuthentication.git",
     "tag": "2.0.1"
   },
-  "swift_version": "4.2",
+  "swift_versions": "4.2",
   "platforms": {
     "ios": "9.0"
   },
   "frameworks": "UIKit",
   "source_files": "GABiometricAuthentication/Classes/**/*",
-  "resources": "GABiometricAuthentication/Assets/PopUp/**/*"
+  "resources": "GABiometricAuthentication/Assets/PopUp/**/*",
+  "swift_version": "4.2"
 }
