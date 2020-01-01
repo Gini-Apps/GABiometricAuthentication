@@ -28,7 +28,7 @@ This is pod handle BiometricAuthentication in the LocalAuthentication framework
   s.source           = { :git => 'https://github.com/Gini-Apps/GABiometricAuthentication.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
   s.ios.deployment_target = '9.0'
   s.frameworks  = 'UIKit'
 
