@@ -1,6 +1,6 @@
 {
   "name": "GABiometricAuthentication",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "summary": "This is pod handle BiometricAuthentication",
   "description": "This is pod handle BiometricAuthentication in the LocalAuthentication framework",
   "homepage": "https://github.com/Gini-Apps/GABiometricAuthentication",
@@ -13,14 +13,14 @@
   },
   "source": {
     "git": "https://github.com/Gini-Apps/GABiometricAuthentication.git",
-    "tag": "2.0.1"
+    "tag": "2.1.0"
   },
-  "swift_versions": "4.2",
+  "swift_versions": "5.0",
   "platforms": {
     "ios": "9.0"
   },
   "frameworks": "UIKit",
   "source_files": "GABiometricAuthentication/Classes/**/*",
   "resources": "GABiometricAuthentication/Assets/PopUp/**/*",
-  "swift_version": "4.2"
+  "swift_version": "5.0"
 }

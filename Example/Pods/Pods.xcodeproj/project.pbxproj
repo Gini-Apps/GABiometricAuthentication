@@ -511,6 +511,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 4BDF9A29D50C40994713B72F34C47672 /* Products */;
@@ -612,6 +613,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5F8EECB74F653DF0055664E0827C3361 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F234AD14571BBD3DE1CF586B9F15C5 /* GABiometricAuthentication.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication.modulemap";
+				PRODUCT_MODULE_NAME = GABiometricAuthentication;
+				PRODUCT_NAME = GABiometricAuthentication;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		87C36213A4D239B0DF00F87E8E273456 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDEB54723785B1AD4A6457B1F4EE7353 /* Pods-GABiometricAuthentication_Example.release.xcconfig */;
@@ -836,7 +868,7 @@
 			};
 			name = Debug;
 		};
-		D2F1EC56465644258FDBF655A5DFCDFC /* Release */ = {
+		F004D8A36BCE920E5A60D20E1CFE7C10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25F234AD14571BBD3DE1CF586B9F15C5 /* GABiometricAuthentication.xcconfig */;
 			buildSettings = {
@@ -860,44 +892,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		DD9810065D64430DA44DE31B628BA7CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25F234AD14571BBD3DE1CF586B9F15C5 /* GABiometricAuthentication.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GABiometricAuthentication/GABiometricAuthentication.modulemap";
-				PRODUCT_MODULE_NAME = GABiometricAuthentication;
-				PRODUCT_NAME = GABiometricAuthentication;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		FA56A677F43A6019656C17AD82236C80 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -966,8 +967,8 @@
 		F309B4C6AB7B3010B378AE63EF172EE5 /* Build configuration list for PBXNativeTarget "GABiometricAuthentication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD9810065D64430DA44DE31B628BA7CA /* Debug */,
-				D2F1EC56465644258FDBF655A5DFCDFC /* Release */,
+				5F8EECB74F653DF0055664E0827C3361 /* Debug */,
+				F004D8A36BCE920E5A60D20E1CFE7C10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
